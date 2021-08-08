@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Menu from "./Menu";
 import SearchBox from "../SearchBox";
 import Logo from "./Logo";
+import Login from "./Login";
 
 const Header = () => {
   return (
@@ -10,6 +11,7 @@ const Header = () => {
       <Logo/>
       <SearchBox shape={'round'}/>
       <Menu/>
+      <Login/>
     </Container>
   )
 }
