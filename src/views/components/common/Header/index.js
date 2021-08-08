@@ -2,26 +2,25 @@ import React from "react";
 import styled from "styled-components";
 import Menu from "./Menu";
 import SearchBox from "../SearchBox";
-import {IconLogo} from "../../../../icons";
+import Logo from "./Logo";
+import Login from "./Login";
 
 const Header = () => {
   return (
     <Container>
-      <Logo>
-        <IconLogo/>
-      </Logo>
-      <SearchBox/>
+      <Logo/>
+      <SearchBox shape={'round'}/>
       <Menu/>
+      <Login/>
     </Container>
   )
 }
 
 const Container = styled.div`
-
-`;
-
-const Logo = styled.div`
-
+  height: 62px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
 `;
 
 export default Header;
