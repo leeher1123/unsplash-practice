@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <Container>
       <Logo/>
-      <SearchBox/>
+      <SearchBox shape={'round'}/>
       <Menu/>
     </Container>
   )
