@@ -61,6 +61,7 @@ const Form = styled.form`
   .square & {
     background: #fff;
     height: 54px;
+    border-radius: 6px;
   }
 `;
 
