@@ -1,10 +1,11 @@
 import React from "react";
 import styled from "styled-components";
+import Banner from "../components/main/Banner";
 
 const Main = () => {
     return (
         <Container>
-            Main
+          <Banner/>
         </Container>
     )
 }
