@@ -9,7 +9,7 @@ const Login = () => {
         <HeaderBtn sort={'white'}>
           Submit a photo
         </HeaderBtn>
-        <a href="#">Login</a>
+        <a href="/">Login</a>
         <HeaderBtn sort={'green'}>
           Join free
         </HeaderBtn>
