@@ -7,13 +7,13 @@ const Menu = () => {
   return (
     <Container>
       <Text>
-        <a href="#">
+        <a href="/">
           <div>Brand</div>
         </a>
-        <a href="#">
+        <a href="/">
           <div>Explore</div>
         </a>
-        <a href="#">
+        <a href="/">
           <div>Blog</div>
         </a>
         <Button>
