@@ -16,7 +16,6 @@ const MainPhotosContainer = () => {
 
   const getPhotos = () => {
     dispatch(Action.Creators.getPhotos({
-      client_id: 'ru5TsUnyXPAqSAbjWb1h5zi6LnOI3qCQEvauSn2UkB4',
       per_page: 30
     }))
   }

@@ -1,15 +1,20 @@
 import axios from "axios";
 
-const baseUrl = 'https://api.unsplash.com';
+const MyAxios = axios.create({
+  baseURL: 'https://api.unsplash.com',
+  headers: {
+    Authorization: 'Client-ID ru5TsUnyXPAqSAbjWb1h5zi6LnOI3qCQEvauSn2UkB4'
+  }
+})
 
 const API = {
-  getPhotos: (data) => axios({
-    url:`${baseUrl}/photos`,
+  getPhotos: (data) => MyAxios({
+    url:`/photos`,
     method: 'get',
     params: data
   }),
-  searchPhotos: (data) => axios({
-    url:`${baseUrl}/search/photos`,
+  searchPhotos: (data) => MyAxios({
+    url:`/search`,
     method: 'get',
     params: data
   })

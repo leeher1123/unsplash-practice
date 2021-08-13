@@ -1,5 +1,13 @@
 const initialState = {
-
+  photos: {
+    results: []
+  },
+  collections: {
+    results: []
+  },
+  users: {
+    results: []
+  }
 }
 
 export const Action = {
@@ -22,12 +30,13 @@ export const Action = {
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    default : return state;
+    default :
+      return state;
 
     case Action.Types.SET_SEARCH_RESULTS : {
       return {
         ...state,
-        photos: action.payload
+        ...action.payload
       }
     }
   }
