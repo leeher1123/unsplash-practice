@@ -8,7 +8,7 @@ const PhotoList = ({data}) => {
       <Row>
         {
           data.map((item) => (
-            <Col key={item.key}>
+            <Col key={item.id}>
               <PhotoItem item={item} />
             </Col>
           ))
