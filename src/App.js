@@ -14,7 +14,7 @@ const App = () => {
       <Header/>
       <Switch>
         <Route exact path={'/'} component={Main}></Route>
-        <Route exact path={'/search'} component={Search}></Route>
+        <Route exact path={'/search/:category/:query'} component={Search}></Route>
       </Switch>
     </Container>
   )
