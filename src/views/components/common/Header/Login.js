@@ -19,7 +19,7 @@ const Login = () => {
 }
 
 const Container = styled.div`
-  flex: 1;
+ 
 `;
 
 const Content = styled.div`

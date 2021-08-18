@@ -26,7 +26,6 @@ const Menu = () => {
 
 const Container = styled.div`
   height: 62px;
-  flex: 1;
 `;
 
 const Text = styled.div`
