@@ -9,6 +9,7 @@ import {DefaultButton} from "../Button/Button.Styled";
 const SearchBox = ({shape}) => {
 
   const [value, setValue] = useState('');
+  const [isFocus, setIsFocus] = useState(false);
   const history = useHistory();
 
   const onSubmit = (e) => {
@@ -16,12 +17,13 @@ const SearchBox = ({shape}) => {
     history.push(`/search/photos/${value}`);
   }
 
+
   const onChange = (e) => {
     setValue(e.target.value);
   }
 
   return (
-    <Container className={cn('SearchBox', shape)}>
+    <Container className={cn('SearchBox', {isFocus}, shape)}>
       <Form onSubmit={onSubmit}>
         <Button><IconSearch/></Button>
         <Label>
@@ -29,6 +31,8 @@ const SearchBox = ({shape}) => {
                  onChange={onChange}
                  value={value}
                  placeholder={'Search free high-resolution photos'}
+                 onFocus={ () => setIsFocus(true) }
+                 onBlur={ () => setIsFocus(false) }
           />
         </Label>
       </Form>
@@ -57,6 +61,10 @@ const Form = styled.form`
       border-color: #ccc;
     }
     
+  }
+  .isFocus.round & {
+    background-color: #fff;
+    border-color: #ccc;
   }
 
   .square & {
