@@ -33,15 +33,15 @@ const SearchContainer = () => {
     <Container>
       <SearchLnb/>
       <Switch>
-        <Route path={`/search/photos/${query}`}>
+        <Route path={`/search/photos/:query`}>
           <PhotoList data={photos.results}/>
         </Route>
-        <Route path={`/search/collections/${query}`}>
+        <Route path={`/search/collections/:query`}>
           <GridList data={collections.results}
                     renderItem={renderCollectionItem}
           />
         </Route>
-        <Route path={`/search/users/${query}`}>
+        <Route path={`/search/users/:query`}>
           <GridList data={users.results}
                     renderItem={renderUserItem}
           />
