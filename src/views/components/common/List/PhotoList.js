@@ -1,15 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import PhotoItem from "../item/PhotoItem";
+import {recomposePhotos} from "../../../../lib/photos";
 
 const PhotoList = ({data}) => {
+
+  const newData = recomposePhotos(data);
+
   return (
     <Container>
       <Row>
         {
-          data.map((item) => (
-            <Col key={item.id}>
-              <PhotoItem item={item} />
+          newData.map((group) => (
+            <Col>
+              {
+                group.map((item) =>
+                  <ItemWrapper>
+                    <PhotoItem item={item}/>
+                  </ItemWrapper>
+                )}
             </Col>
           ))
         }
@@ -31,6 +40,10 @@ const Row = styled.div`
 const Col = styled.div`
   width: 33.33%;
   padding: 0 12px;
+`;
+
+const ItemWrapper = styled.div`
+  margin-bottom: 24px;
 `;
 
 export default PhotoList;
