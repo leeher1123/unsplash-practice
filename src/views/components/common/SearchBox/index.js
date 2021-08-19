@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useRef, useState} from "react";
 import styled from "styled-components";
 import {useHistory} from 'react-router-dom';
 import cn from 'classnames';
@@ -52,10 +52,11 @@ const Form = styled.form`
     border-radius: 19px;
     border: 1px solid transparent;
     transition: .2s;
-
+    
     &:hover {
       border-color: #ccc;
     }
+    
   }
 
   .square & {
@@ -67,6 +68,8 @@ const Form = styled.form`
 
 const Button = styled(DefaultButton)`
   svg {
+    display: flex;
+    align-items: center;
     .round & {
       width: 20px;
       height: 20px;
