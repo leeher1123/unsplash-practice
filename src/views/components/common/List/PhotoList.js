@@ -25,12 +25,12 @@ const Container = styled.div`
 const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding: 0 -15px;
+  padding: 0 -12px;
 `;
 
 const Col = styled.div`
   width: 33.33%;
-  padding: 15px;
+  padding: 0 12px;
 `;
 
 export default PhotoList;
