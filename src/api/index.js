@@ -9,12 +9,17 @@ const MyAxios = axios.create({
 
 const API = {
   getPhotos: (data) => MyAxios({
-    url:`/photos`,
+    url:'/photos',
     method: 'get',
     params: data
   }),
   searchPhotos: (data) => MyAxios({
-    url:`/search`,
+    url:'/search',
+    method: 'get',
+    params: data
+  }),
+  getTopics: (data) => MyAxios({
+    url:'/topics',
     method: 'get',
     params: data
   })

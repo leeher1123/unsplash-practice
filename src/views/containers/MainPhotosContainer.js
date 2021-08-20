@@ -3,6 +3,7 @@ import styled from "styled-components";
 import PhotoList from "../components/common/List/PhotoList";
 import {useDispatch, useSelector} from "react-redux";
 import {Action} from "../../redux/photos/slice";
+import {ContentContainer} from "../components/common/Layout/Layout.Styled";
 
 const MainPhotosContainer = () => {
 
@@ -20,11 +21,13 @@ const MainPhotosContainer = () => {
     }))
   }
 
-    return (
-        <Container>
-            <PhotoList data={list} />
-        </Container>
-    )
+  return (
+    <Container>
+      <ContentContainer>
+        <PhotoList data={list}/>
+      </ContentContainer>
+    </Container>
+  )
 }
 
 const Container = styled.div`

@@ -1,18 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import {useParams} from "react-router-dom";
 
-const PhotoItem = ({item}) => {
+const Topics = () => {
+
+  const {slug} = useParams();
+
     return (
         <Container>
-            <img src={item.urls.regular} />
+            <h1>{slug}</h1>
         </Container>
     )
 }
 
 const Container = styled.div`
-  img {
-      width: 100%;
-  }
+
 `;
 
-export default PhotoItem;
+export default Topics;

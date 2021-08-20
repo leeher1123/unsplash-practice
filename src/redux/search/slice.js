@@ -7,7 +7,8 @@ const initialState = {
   },
   users: {
     results: []
-  }
+  },
+  related_searches: []
 }
 
 export const Action = {

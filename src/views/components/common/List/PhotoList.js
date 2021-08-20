@@ -1,15 +1,24 @@
 import React from "react";
 import styled from "styled-components";
 import PhotoItem from "../item/PhotoItem";
+import {recomposePhotos} from "../../../../lib/photos";
 
 const PhotoList = ({data}) => {
+
+  const newData = recomposePhotos(data);
+
   return (
     <Container>
       <Row>
         {
-          data.map((item) => (
-            <Col key={item.id}>
-              <PhotoItem item={item} />
+          newData.map((group) => (
+            <Col>
+              {
+                group.map((item) =>
+                  <ItemWrapper>
+                    <PhotoItem item={item}/>
+                  </ItemWrapper>
+                )}
             </Col>
           ))
         }
@@ -19,19 +28,22 @@ const PhotoList = ({data}) => {
 }
 
 const Container = styled.div`
-  max-width: 1000px;
-  margin: 0 auto;
+  
 `;
 
 const Row = styled.div`
   display: flex;
   flex-wrap: wrap;
-  padding: 0 -15px;
+  padding: 0 -12px;
 `;
 
 const Col = styled.div`
   width: 33.33%;
-  padding: 15px;
+  padding: 0 12px;
+`;
+
+const ItemWrapper = styled.div`
+  margin-bottom: 24px;
 `;
 
 export default PhotoList;
