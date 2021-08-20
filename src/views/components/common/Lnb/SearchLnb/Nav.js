@@ -4,22 +4,22 @@ import {Link, useParams} from 'react-router-dom';
 import cn from "classnames";
 import {getSearchMenus} from "../../../../../lib/search";
 
-const Nav = () => {
+const Nav = ({totalNum}) => {
 
   const {query, category} = useParams();
 
-  const searchMenus = getSearchMenus(query, category);
+  const searchMenus = getSearchMenus(query, category, {totalNum});
 
   return (
     <Container>
       {
-        searchMenus.map(({name, to, isActive, icon}) => (
+        searchMenus.map(({name, to, isActive, icon, num}) => (
           <NavItem key={name}
                    to={to}
                    className={cn({isActive})}
           >
             {icon}
-            {name} 10k
+            {name} {num}
           </NavItem>
         ))
       }
