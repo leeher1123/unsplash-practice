@@ -40,6 +40,7 @@ const Row = styled.div`
 const Col = styled.div`
   width: 33.33%;
   padding: 0 12px;
+  position: relative;
 `;
 
 const ItemWrapper = styled.div`

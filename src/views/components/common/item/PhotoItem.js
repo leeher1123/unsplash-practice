@@ -4,7 +4,7 @@ import styled from "styled-components";
 const PhotoItem = ({item}) => {
     return (
         <Container>
-            <img src={item.urls.regular} />
+          <img src={item.urls.regular} />
         </Container>
     )
 }
