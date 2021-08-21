@@ -33,7 +33,7 @@ const SearchContainer = () => {
 
   return (
     <Container>
-      <SearchLnb/>
+      <SearchLnb data={{photos, collections, users}}/>
 
       <ContentContainer>
 

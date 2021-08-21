@@ -3,10 +3,11 @@ import styled from "styled-components";
 import Nav from "./Nav";
 import Filter from "./Filter";
 
-const SearchLnb = () => {
+const SearchLnb = ({data}) => {
+
   return (
     <Container>
-      <Nav/>
+      <Nav totalNum={data}/>
       <Filter/>
     </Container>
   )

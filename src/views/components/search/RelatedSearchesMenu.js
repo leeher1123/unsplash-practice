@@ -1,14 +1,16 @@
 import React from "react";
 import styled from "styled-components";
 import ScrollMenu from "../common/ScrollMenu";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 
 const RelatedSearchesMenu = ({menu}) => {
 
+  const {query} = useParams();
   const renderMenuItem = (item) => <MenuItem to={`/search/photos/${item.title}`}>{item.title}</MenuItem>
 
     return (
         <Container>
+          <h1>{query}</h1>
           <ScrollMenu menu={menu}
                       renderItem={renderMenuItem}/>
         </Container>
@@ -16,7 +18,15 @@ const RelatedSearchesMenu = ({menu}) => {
 }
 
 const Container = styled.div`
-
+  padding: 60px 12px 72px;
+  h1 {
+    width: 864px;
+    height: 55px;
+    margin-bottom: 16px;
+    font-size: 46px;
+    font-weight: bold;
+    color: #111;
+  }
 `;
 
 const MenuItem = styled(Link)`
