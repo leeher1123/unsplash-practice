@@ -1,13 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-const PhotoItem = ({item}) => {
-    return (
-        <Container>
-          <img src={item.urls.regular} />
-        </Container>
-    )
-}
+const PhotoItem = ({ item }) => (
+  <Container>
+    <img src={item.urls.regular} />
+  </Container>
+);
 
 const Container = styled.div`
   img {

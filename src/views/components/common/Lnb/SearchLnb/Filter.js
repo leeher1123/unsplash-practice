@@ -1,27 +1,27 @@
-import React from "react";
-import styled from "styled-components";
-import {DefaultButton} from "../../Button/Button.Styled";
+import React from 'react';
+import styled from 'styled-components';
+
 import { VscTriangleDown } from 'react-icons/vsc';
 
-const Filter = () => {
-    return (
-        <Container>
-          <Button>
-            any orientation
-            <VscTriangleDown/>
-          </Button>
-          <Button>
-            any color
-            <VscTriangleDown/>
-          </Button>
-          <Button>
-            sort by &nbsp;
-            <span>Relevance</span>
-            <VscTriangleDown/>
-          </Button>
-        </Container>
-    )
-}
+import { DefaultButton } from '../../Button/Button.Styled';
+
+const Filter = () => (
+  <Container>
+    <Button>
+      any orientation
+      <VscTriangleDown />
+    </Button>
+    <Button>
+      any color
+      <VscTriangleDown />
+    </Button>
+    <Button>
+      sort by &nbsp;
+      <span>Relevance</span>
+      <VscTriangleDown />
+    </Button>
+  </Container>
+);
 
 const Container = styled.div`
   display: flex;

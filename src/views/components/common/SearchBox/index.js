@@ -1,13 +1,12 @@
-import React, {useRef, useState} from "react";
-import styled from "styled-components";
-import {useHistory} from 'react-router-dom';
+import React, { useRef, useState } from 'react';
+import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
 import cn from 'classnames';
 
-import {IconSearch} from "../../../../icons";
-import {DefaultButton} from "../Button/Button.Styled";
+import { IconSearch } from '../../../../icons';
+import { DefaultButton } from '../Button/Button.Styled';
 
-const SearchBox = ({shape}) => {
-
+const SearchBox = ({ shape }) => {
   const [value, setValue] = useState('');
   const [isFocus, setIsFocus] = useState(false);
   const history = useHistory();
@@ -15,30 +14,30 @@ const SearchBox = ({shape}) => {
   const onSubmit = (e) => {
     e.preventDefault();
     history.push(`/search/photos/${value}`);
-  }
-
+  };
 
   const onChange = (e) => {
     setValue(e.target.value);
-  }
+  };
 
   return (
-    <Container className={cn('SearchBox', {isFocus}, shape)}>
+    <Container className={cn('SearchBox', { isFocus }, shape)}>
       <Form onSubmit={onSubmit}>
-        <Button><IconSearch/></Button>
+        <Button><IconSearch /></Button>
         <Label>
-          <Input type="text"
-                 onChange={onChange}
-                 value={value}
-                 placeholder={'Search free high-resolution photos'}
-                 onFocus={ () => setIsFocus(true) }
-                 onBlur={ () => setIsFocus(false) }
+          <Input
+            type="text"
+            onChange={onChange}
+            value={value}
+            placeholder="Search free high-resolution photos"
+            onFocus={() => setIsFocus(true)}
+            onBlur={() => setIsFocus(false)}
           />
         </Label>
       </Form>
     </Container>
-  )
-}
+  );
+};
 
 const Container = styled.div`
   flex: 3;

@@ -1,31 +1,36 @@
-import React from "react";
-import styled from "styled-components";
-import {Link, useParams} from 'react-router-dom';
-import cn from "classnames";
-import {getSearchMenus} from "../../../../../lib/search";
+import React from 'react';
+import styled from 'styled-components';
+import { Link, useParams } from 'react-router-dom';
+import cn from 'classnames';
 
-const Nav = ({totalNum}) => {
+import { getSearchMenus } from '../../../../../lib/search';
 
-  const {query, category} = useParams();
+const Nav = ({ totalNum }) => {
+  const { query, category } = useParams();
 
-  const searchMenus = getSearchMenus(query, category, {totalNum});
+  const searchMenus = getSearchMenus(query, category, { totalNum });
 
   return (
     <Container>
       {
-        searchMenus.map(({name, to, isActive, icon, num}) => (
-          <NavItem key={name}
-                   to={to}
-                   className={cn({isActive})}
+        searchMenus.map(({
+          name, to, isActive, icon, num,
+        }) => (
+          <NavItem
+            key={name}
+            to={to}
+            className={cn({ isActive })}
           >
             {icon}
-            {name} {num}
+            {name}
+            {' '}
+            {num}
           </NavItem>
         ))
       }
     </Container>
-  )
-}
+  );
+};
 
 const Container = styled.div`
   display: flex;

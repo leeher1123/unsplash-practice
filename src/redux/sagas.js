@@ -1,4 +1,5 @@
-import {fork, all} from 'redux-saga/effects';
+import { fork, all } from 'redux-saga/effects';
+
 import appSaga from './app/saga';
 import photosSaga from './photos/saga';
 import searchSaga from './search/saga';
@@ -9,8 +10,8 @@ function* sagas() {
     fork(appSaga),
     fork(photosSaga),
     fork(searchSaga),
-    fork(topicsSaga)
-  ])
+    fork(topicsSaga),
+  ]);
 }
 
 export default sagas;

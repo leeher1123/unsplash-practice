@@ -1,6 +1,6 @@
 const initialState = {
-  list: []
-}
+  list: [],
+};
 
 export const Action = {
   Types: {
@@ -11,26 +11,26 @@ export const Action = {
   Creators: {
     getPhotos: (payload) => ({
       type: Action.Types.GET_PHOTOS,
-      payload
+      payload,
     }),
     setPhotos: (payload) => ({
       type: Action.Types.SET_PHOTOS,
-      payload
-    })
-  }
-}
+      payload,
+    }),
+  },
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    default : return state;
+  default: return state;
 
-    case Action.Types.SET_PHOTOS : {
-      return {
-        ...state,
-        list: action.payload
-      }
-    }
+  case Action.Types.SET_PHOTOS: {
+    return {
+      ...state,
+      list: action.payload,
+    };
   }
-}
+  }
+};
 
 export default reducer;

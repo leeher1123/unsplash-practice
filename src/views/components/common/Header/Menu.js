@@ -1,28 +1,27 @@
-import React from "react";
-import styled from "styled-components";
-import {IconSpot} from "../../../../icons";
-import {DefaultButton} from "../Button/Button.Styled";
+import React from 'react';
+import styled from 'styled-components';
 
-const Menu = () => {
-  return (
-    <Container>
-      <Text>
-        <a href="/">
-          <div>Brand</div>
-        </a>
-        <a href="/">
-          <div>Explore</div>
-        </a>
-        <a href="/">
-          <div>Blog</div>
-        </a>
-        <Button>
-          <IconSpot/>
-        </Button>
-      </Text>
-    </Container>
-  )
-}
+import { IconSpot } from '../../../../icons';
+import { DefaultButton } from '../Button/Button.Styled';
+
+const Menu = () => (
+  <Container>
+    <Text>
+      <a href="/">
+        <div>Brand</div>
+      </a>
+      <a href="/">
+        <div>Explore</div>
+      </a>
+      <a href="/">
+        <div>Blog</div>
+      </a>
+      <Button>
+        <IconSpot />
+      </Button>
+    </Text>
+  </Container>
+);
 
 const Container = styled.div`
   height: 62px;

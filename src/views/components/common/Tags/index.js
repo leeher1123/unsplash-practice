@@ -1,15 +1,13 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-const Tags = ({tags}) => {
-  return (
-    <Container>
-      {
-        tags.map((item) => <Tag key={item.title}>{item.title}</Tag>)
-      }
-    </Container>
-  )
-}
+const Tags = ({ tags }) => (
+  <Container>
+    {
+      tags.map((item) => <Tag key={item.title}>{item.title}</Tag>)
+    }
+  </Container>
+);
 
 const Container = styled.div`
   display: flex;

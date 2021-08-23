@@ -1,14 +1,13 @@
-import React from "react";
-import styled from "styled-components";
-import SearchContainer from "../containers/SearchContainer";
+import React from 'react';
+import styled from 'styled-components';
 
-const Search = () => {
-    return (
-        <Container>
-          <SearchContainer/>
-        </Container>
-    )
-}
+import SearchContainer from '../containers/SearchContainer';
+
+const Search = () => (
+  <Container>
+    <SearchContainer />
+  </Container>
+);
 
 const Container = styled.div`
 

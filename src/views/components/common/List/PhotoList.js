@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import PhotoItem from "../item/PhotoItem";
-import {recomposePhotos} from "../../../../lib/photos";
+import React from 'react';
+import styled from 'styled-components';
 
-const PhotoList = ({data}) => {
+import PhotoItem from '../item/PhotoItem';
+import { recomposePhotos } from '../../../../lib/photos';
 
+const PhotoList = ({ data }) => {
   const newData = recomposePhotos(data);
 
   return (
@@ -14,18 +14,19 @@ const PhotoList = ({data}) => {
           newData.map((group) => (
             <Col>
               {
-                group.map((item) =>
+                group.map((item) => (
                   <ItemWrapper>
-                    <PhotoItem item={item}/>
+                    <PhotoItem item={item} />
                   </ItemWrapper>
-                )}
+                ))
+              }
             </Col>
           ))
         }
       </Row>
     </Container>
-  )
-}
+  );
+};
 
 const Container = styled.div`
   

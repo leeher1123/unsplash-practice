@@ -1,22 +1,21 @@
-import React from "react";
-import styled from "styled-components";
-import HeaderBtn from "./Button";
+import React from 'react';
+import styled from 'styled-components';
 
-const Login = () => {
-  return (
-    <Container>
-      <Content>
-        <HeaderBtn sort={'white'}>
-          Submit a photo
-        </HeaderBtn>
-        <a href="/">Login</a>
-        <HeaderBtn sort={'green'}>
-          Join free
-        </HeaderBtn>
-      </Content>
-    </Container>
-  )
-}
+import HeaderBtn from './Button';
+
+const Login = () => (
+  <Container>
+    <Content>
+      <HeaderBtn sort="white">
+        Submit a photo
+      </HeaderBtn>
+      <a href="/">Login</a>
+      <HeaderBtn sort="green">
+        Join free
+      </HeaderBtn>
+    </Content>
+  </Container>
+);
 
 const Container = styled.div`
  

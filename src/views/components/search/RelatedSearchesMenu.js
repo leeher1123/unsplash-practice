@@ -1,21 +1,24 @@
-import React from "react";
-import styled from "styled-components";
-import ScrollMenu from "../common/ScrollMenu";
-import {Link, useParams} from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
 
-const RelatedSearchesMenu = ({menu}) => {
+import { Link, useParams } from 'react-router-dom';
 
-  const {query} = useParams();
-  const renderMenuItem = (item) => <MenuItem to={`/search/photos/${item.title}`}>{item.title}</MenuItem>
+import ScrollMenu from '../common/ScrollMenu';
 
-    return (
-        <Container>
-          <h1>{query}</h1>
-          <ScrollMenu menu={menu}
-                      renderItem={renderMenuItem}/>
-        </Container>
-    )
-}
+const RelatedSearchesMenu = ({ menu }) => {
+  const { query } = useParams();
+  const renderMenuItem = (item) => <MenuItem to={`/search/photos/${item.title}`}>{item.title}</MenuItem>;
+
+  return (
+    <Container>
+      <h1>{query}</h1>
+      <ScrollMenu
+        menu={menu}
+        renderItem={renderMenuItem}
+      />
+    </Container>
+  );
+};
 
 const Container = styled.div`
   padding: 60px 12px 72px;

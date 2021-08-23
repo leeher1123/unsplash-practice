@@ -1,19 +1,22 @@
-import React from "react";
-import styled from "styled-components";
-import ScrollMenu from "../../ScrollMenu";
-import {Link} from "react-router-dom";
+import React from 'react';
+import styled from 'styled-components';
 
-const TopicsLnb = ({data}) => {
+import { Link } from 'react-router-dom';
 
-  const renderItem = (item) => <MenuItem to={`/topics/${item.slug}`}>{item.title}</MenuItem>
+import ScrollMenu from '../../ScrollMenu';
+
+const TopicsLnb = ({ data }) => {
+  const renderItem = (item) => <MenuItem to={`/topics/${item.slug}`}>{item.title}</MenuItem>;
 
   return (
     <Container>
-      <ScrollMenu menu={data}
-                  renderItem={renderItem}/>
+      <ScrollMenu
+        menu={data}
+        renderItem={renderItem}
+      />
     </Container>
-  )
-}
+  );
+};
 
 const Container = styled.div`
 

@@ -1,21 +1,19 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-const GridList = ({data, renderItem}) => {
-    return (
-        <Container>
-            <Row>
-              {
-                data.map((item, index) => (
-                  <Col key={item.id}>
-                    {renderItem(item, index)}
-                  </Col>
-                ))
-              }
-            </Row>
-        </Container>
-    )
-}
+const GridList = ({ data, renderItem }) => (
+  <Container>
+    <Row>
+      {
+        data.map((item, index) => (
+          <Col key={item.id}>
+            {renderItem(item, index)}
+          </Col>
+        ))
+      }
+    </Row>
+  </Container>
+);
 
 const Container = styled.div`
 

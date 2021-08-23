@@ -1,35 +1,40 @@
-import React from "react";
-import styled from "styled-components";
-import {Link} from "react-router-dom";
-import Tags from "../Tags";
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-const CollectionItem = ({item}) => {
-    return (
-        <Container>
-          <Thumb to={'/'}>
-            <Screen/>
-            <Inner>
-              <Left>
-                <ImageBox><img src={item.preview_photos[0].urls.regular} alt=""/></ImageBox>
-              </Left>
-              <Right>
-                <Top>
-                  <ImageBox><img src={item.preview_photos[1].urls.regular} alt=""/></ImageBox>
-                </Top>
-                <Bottom>
-                  <ImageBox><img src={item.preview_photos[2].urls.regular} alt=""/></ImageBox>
-                </Bottom>
-              </Right>
-            </Inner>
-          </Thumb>
-          <Desc>
-            <h3>{item.title}</h3>
-            <p>{item.total_photos} photos · Curated by {item.user.username}</p>
-          </Desc>
-          <Tags tags={item.tags}/>
-        </Container>
-    )
-}
+import Tags from '../Tags';
+
+const CollectionItem = ({ item }) => (
+  <Container>
+    <Thumb to="/">
+      <Screen />
+      <Inner>
+        <Left>
+          <ImageBox><img src={item.preview_photos[0].urls.regular} alt="" /></ImageBox>
+        </Left>
+        <Right>
+          <Top>
+            <ImageBox><img src={item.preview_photos[1].urls.regular} alt="" /></ImageBox>
+          </Top>
+          <Bottom>
+            <ImageBox><img src={item.preview_photos[2].urls.regular} alt="" /></ImageBox>
+          </Bottom>
+        </Right>
+      </Inner>
+    </Thumb>
+    <Desc>
+      <h3>{item.title}</h3>
+      <p>
+        {item.total_photos}
+        {' '}
+        photos · Curated by
+        {' '}
+        {item.user.username}
+      </p>
+    </Desc>
+    <Tags tags={item.tags} />
+  </Container>
+);
 
 const Container = styled.div`
   

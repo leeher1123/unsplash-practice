@@ -1,17 +1,15 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-const ScrollMenu = ({menu, renderItem}) => {
-  return (
-    <Container>
-      <Track>
-        {
-          menu.map((item) => renderItem(item))
-        }
-      </Track>
-    </Container>
-  )
-}
+const ScrollMenu = ({ menu, renderItem }) => (
+  <Container>
+    <Track>
+      {
+        menu.map((item) => renderItem(item))
+      }
+    </Track>
+  </Container>
+);
 
 const Container = styled.div`
 

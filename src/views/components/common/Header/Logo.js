@@ -1,20 +1,18 @@
-import React from "react";
-import styled from "styled-components";
-import {Link} from 'react-router-dom';
+import React from 'react';
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
-import {IconLogo} from "../../../../icons";
+import { IconLogo } from '../../../../icons';
 
-const Logo = () => {
-  return (
-    <Container to={'/'}>
-      <IconLogo/>
-      <Text>
-        <h1>Unsplash</h1>
-        <p>Photos for everyone</p>
-      </Text>
-    </Container>
-  )
-}
+const Logo = () => (
+  <Container to="/">
+    <IconLogo />
+    <Text>
+      <h1>Unsplash</h1>
+      <p>Photos for everyone</p>
+    </Text>
+  </Container>
+);
 
 const Container = styled(Link)`
   display: flex;

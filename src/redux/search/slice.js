@@ -1,15 +1,15 @@
 const initialState = {
   photos: {
-    results: []
+    results: [],
   },
   collections: {
-    results: []
+    results: [],
   },
   users: {
-    results: []
+    results: [],
   },
-  related_searches: []
-}
+  related_searches: [],
+};
 
 export const Action = {
   Types: {
@@ -20,27 +20,27 @@ export const Action = {
   Creators: {
     searchPhotos: (payload) => ({
       type: Action.Types.SEARCH_PHOTOS,
-      payload
+      payload,
     }),
     setSearchResult: (payload) => ({
       type: Action.Types.SET_SEARCH_RESULTS,
-      payload
-    })
-  }
-}
+      payload,
+    }),
+  },
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    default :
-      return state;
+  default:
+    return state;
 
-    case Action.Types.SET_SEARCH_RESULTS : {
-      return {
-        ...state,
-        ...action.payload
-      }
-    }
+  case Action.Types.SET_SEARCH_RESULTS: {
+    return {
+      ...state,
+      ...action.payload,
+    };
   }
-}
+  }
+};
 
 export default reducer;

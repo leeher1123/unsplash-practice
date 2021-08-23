@@ -1,4 +1,4 @@
-import {createGlobalStyle} from "styled-components";
+import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
   html, body, div, span, applet, object, iframe,
@@ -64,4 +64,4 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
     color: #767676;
   }
-`
+`;

@@ -1,28 +1,28 @@
-import axios from "axios";
+import axios from 'axios';
 
 const MyAxios = axios.create({
   baseURL: 'https://api.unsplash.com',
   headers: {
-    Authorization: 'Client-ID ru5TsUnyXPAqSAbjWb1h5zi6LnOI3qCQEvauSn2UkB4'
-  }
-})
+    Authorization: 'Client-ID ru5TsUnyXPAqSAbjWb1h5zi6LnOI3qCQEvauSn2UkB4',
+  },
+});
 
 const API = {
   getPhotos: (data) => MyAxios({
-    url:'/photos',
+    url: '/photos',
     method: 'get',
-    params: data
+    params: data,
   }),
   searchPhotos: (data) => MyAxios({
-    url:'/search',
+    url: '/search',
     method: 'get',
-    params: data
+    params: data,
   }),
   getTopics: (data) => MyAxios({
-    url:'/topics',
+    url: '/topics',
     method: 'get',
-    params: data
-  })
-}
+    params: data,
+  }),
+};
 
 export default API;

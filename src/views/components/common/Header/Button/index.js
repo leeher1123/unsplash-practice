@@ -1,15 +1,15 @@
-import React from "react";
-import styled from "styled-components";
-import {DefaultButton} from "../../Button/Button.Styled";
+import React from 'react';
+import styled from 'styled-components';
+
 import cn from 'classnames';
 
-const HeaderBtn = ({sort, children}) => {
-    return (
-        <Container className={cn('HeaderBtn', sort)}>
-            <Button>{children}</Button>
-        </Container>
-    )
-}
+import { DefaultButton } from '../../Button/Button.Styled';
+
+const HeaderBtn = ({ sort, children }) => (
+  <Container className={cn('HeaderBtn', sort)}>
+    <Button>{children}</Button>
+  </Container>
+);
 
 const Container = styled.div`
 
