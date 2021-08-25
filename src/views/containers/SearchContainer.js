@@ -22,16 +22,16 @@ const SearchContainer = () => {
     photos, collections, users, related_searches,
   } = useSelector((state) => state.search);
 
-  useEffect(() => {
-    searchPhotos();
-  }, [query]);
-
   const searchPhotos = () => {
     dispatch(Action.Creators.searchPhotos({
       query,
       per_page: 30,
     }));
   };
+
+  useEffect(() => {
+    searchPhotos();
+  }, [query]);
 
   const renderCollectionItem = (item, index) => <CollectionItem item={item} index={index} />;
   const renderUserItem = (item, index) => <UserItem item={item} index={index} />;

@@ -1,6 +1,6 @@
 const initialState = {
 
-}
+};
 
 export const Action = {
   Types: {
@@ -9,14 +9,13 @@ export const Action = {
 
   Creators: {
 
-  }
-}
+  },
+};
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    default : return state;
-
+  default: return state;
   }
-}
+};
 
 export default reducer;

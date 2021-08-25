@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const PhotoItem = ({ item }) => (
   <Container>
-    <img src={item.urls.regular} />
+    <img src={item.urls.regular} alt="사진" />
   </Container>
 );
 

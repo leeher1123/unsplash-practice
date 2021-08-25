@@ -12,15 +12,15 @@ const MainPhotosContainer = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    getPhotos();
-  }, []);
-
   const getPhotos = () => {
     dispatch(Action.Creators.getPhotos({
       per_page: 30,
     }));
   };
+
+  useEffect(() => {
+    getPhotos();
+  }, []);
 
   return (
     <Container>
