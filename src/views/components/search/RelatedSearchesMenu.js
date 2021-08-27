@@ -7,15 +7,15 @@ import ScrollMenu from '../common/ScrollMenu';
 
 const RelatedSearchesMenu = ({ menu }) => {
   const { query } = useParams();
-  const renderMenuItem = (item) => <MenuItem to={`/search/photos/${item.title}`}>{item.title}</MenuItem>;
 
   return (
     <Container>
       <h1>{query}</h1>
-      <ScrollMenu
-        menu={menu}
-        renderItem={renderMenuItem}
-      />
+      <ScrollMenu menu={menu}>
+        {
+          (item) => <MenuItem to={`/search/photos/${item.title}`}>{item.title}</MenuItem>
+        }
+      </ScrollMenu>
     </Container>
   );
 };
