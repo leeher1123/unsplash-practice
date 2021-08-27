@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const ScrollMenu = ({ menu, renderItem }) => (
+const ScrollMenu = ({ children, menu }) => (
   <Container>
     <Track>
       {
-        menu.map((item) => renderItem(item))
+        menu.map((item) => children(item))
       }
     </Track>
   </Container>

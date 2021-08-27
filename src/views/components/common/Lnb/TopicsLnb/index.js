@@ -5,18 +5,15 @@ import { Link } from 'react-router-dom';
 
 import ScrollMenu from '../../ScrollMenu';
 
-const TopicsLnb = ({ data }) => {
-  const renderItem = (item) => <MenuItem to={`/topics/${item.slug}`}>{item.title}</MenuItem>;
-
-  return (
-    <Container>
-      <ScrollMenu
-        menu={data}
-        renderItem={renderItem}
-      />
-    </Container>
-  );
-};
+const TopicsLnb = ({ data }) => (
+  <Container>
+    <ScrollMenu menu={data}>
+      {
+        (item) => <MenuItem to={`/topics/${item.slug}`}>{item.title}</MenuItem>
+      }
+    </ScrollMenu>
+  </Container>
+);
 
 const Container = styled.div`
 
