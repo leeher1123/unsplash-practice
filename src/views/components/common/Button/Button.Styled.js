@@ -5,4 +5,5 @@ export const DefaultButton = styled.div`
   border: 1px solid transparent;
   outline: 0;
   padding: 0;
+  cursor: pointer;
 `;
