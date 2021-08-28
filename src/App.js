@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Route, Switch } from 'react-router-dom';
 
 import Main from './views/pages/Main';
-import Header from './views/components/common/Header';
 import { GlobalStyle } from './style/GlobalStyle';
 import Search from './views/pages/Search';
 import HeaderContainer from './views/containers/HeaderContainer';
