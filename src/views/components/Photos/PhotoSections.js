@@ -12,7 +12,7 @@ const PhotoSections = ({ data, relatedPhotos }) => {
   const a = 1;
   return (
     <Container>
-      <PhotoDetail />
+      <PhotoDetail data={data} />
       <RelatedSection title="photos">
         <PhotoList data={relatedPhotos?.results} />
       </RelatedSection>
