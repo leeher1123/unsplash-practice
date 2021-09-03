@@ -58,6 +58,7 @@
     "react/require-default-props": "off",
     "react/prop-types": "off",
     "camelcase": "off",
-    "no-plusplus": "off"
+    "no-plusplus": "off",
+    "no-useless-return": "off"
   }
 }

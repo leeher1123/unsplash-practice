@@ -7,6 +7,7 @@ import { GlobalStyle } from './style/GlobalStyle';
 import Search from './views/pages/Search';
 import HeaderContainer from './views/containers/HeaderContainer';
 import Topics from './views/pages/Topics';
+import PhotoPopupContainer from './views/containers/PhotoPopupContainer';
 
 const App = () => (
   <Container>
@@ -17,6 +18,8 @@ const App = () => (
       <Route exact path="/search/:category/:query" component={Search} />
       <Route exact path="/topics/:slug" component={Topics} />
     </Switch>
+
+    <PhotoPopupContainer />
   </Container>
 );
 
