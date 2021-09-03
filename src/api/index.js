@@ -27,6 +27,10 @@ const API = {
     method: 'get',
     params: data,
   }),
+  getRelatedPhotos: (id) => axiosInstance({
+    url: `/photos/${id}/related`,
+    method: 'get',
+  }),
 };
 
 export default API;

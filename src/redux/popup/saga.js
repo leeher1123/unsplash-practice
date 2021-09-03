@@ -9,6 +9,7 @@ const openPhotoPopup = function* ({ payload }) {
     currentPhotoId: payload,
   }));
   yield put(PhotosAction.Creators.getPhotoById(payload));
+  yield put(PhotosAction.Creators.getRelatedPhotos(payload));
 };
 
 function* saga() {

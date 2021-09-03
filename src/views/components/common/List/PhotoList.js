@@ -7,7 +7,7 @@ import PhotoItem from '../item/PhotoItem';
 import { recomposePhotos } from '../../../../lib/photos';
 import { Action } from '../../../../redux/popup/slice';
 
-const PhotoList = ({ data }) => {
+const PhotoList = ({ data = [] }) => {
   const newData = recomposePhotos(data);
   const dispatch = useDispatch();
   const onClickItem = (id) => {

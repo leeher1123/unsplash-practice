@@ -10,7 +10,7 @@ import { Action } from '../../redux/popup/slice';
 const PhotoPopupContainer = () => {
   const dispatch = useDispatch();
   const { openPopup, currentPhotoId } = useSelector((state) => state.popup);
-  const { photo } = useSelector((state) => state.photos);
+  const { photo, relatedPhotos } = useSelector((state) => state.photos);
 
   const onClose = () => {
     dispatch(Action.Creators.closePhotoPopup());
@@ -25,6 +25,7 @@ const PhotoPopupContainer = () => {
           <PhotoPopup
             onClose={onClose}
             data={photo[currentPhotoId]}
+            relatedPhotos={relatedPhotos?.[currentPhotoId]}
           />,
           document.getElementById('popup'),
         )
