@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const PhotoItem = ({ item }) => (
-  <Container>
+const PhotoItem = ({ item, onClick = () => {} }) => (
+  <Container onClick={onClick}>
     <img src={item.urls.regular} alt="사진" />
   </Container>
 );

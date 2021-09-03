@@ -21,6 +21,7 @@ const getPhotos = function* ({ payload }) {
 const getPhotoById = function* ({ payload }) {
   const result = yield call(API.getPhotoById, payload);
   if (_.isEmpty(result.data)) return;
+  yield put(Action.Creators.setPhotoById(result.data));
 };
 
 function* saga() {
