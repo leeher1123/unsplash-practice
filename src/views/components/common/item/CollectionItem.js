@@ -10,14 +10,29 @@ const CollectionItem = ({ item }) => (
       <Screen />
       <Inner>
         <Left>
-          <ImageBox><img src={item.preview_photos[0].urls.regular} alt="" /></ImageBox>
+          <ImageBox>
+            {
+              item.preview_photos[0]
+                && <img src={item.preview_photos[0].urls.regular} alt="" />
+            }
+          </ImageBox>
         </Left>
         <Right>
           <Top>
-            <ImageBox><img src={item.preview_photos[1].urls.regular} alt="" /></ImageBox>
+            <ImageBox>
+              {
+                item.preview_photos[1]
+                  && <img src={item.preview_photos[1].urls.regular} alt="" />
+              }
+            </ImageBox>
           </Top>
           <Bottom>
-            <ImageBox><img src={item.preview_photos[2].urls.regular} alt="" /></ImageBox>
+            <ImageBox>
+              {
+                item.preview_photos[2]
+                  && <img src={item.preview_photos[2].urls.regular} alt="" />
+              }
+            </ImageBox>
           </Bottom>
         </Right>
       </Inner>

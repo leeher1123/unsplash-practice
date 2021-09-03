@@ -3,12 +3,15 @@ import styled from 'styled-components';
 
 import PhotoSections from '../Photos/PhotoSections';
 
-const PhotoPopup = ({ data, onClose = () => {} }) => (
+const PhotoPopup = ({ data, onClose = () => {}, relatedPhotos }) => (
   <Container>
     <Track>
       <Contents>
         <Inner>
-          <PhotoSections data={data} />
+          <PhotoSections
+            data={data}
+            relatedPhotos={relatedPhotos}
+          />
         </Inner>
       </Contents>
     </Track>
@@ -38,6 +41,7 @@ const Contents = styled.div`
   margin: 0 auto;
   z-index: 10;
   background: #fff;
+  padding-bottom: 80px;
 `;
 
 const Inner = styled.div`

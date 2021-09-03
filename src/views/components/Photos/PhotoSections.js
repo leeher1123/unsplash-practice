@@ -6,14 +6,15 @@ import PhotoDetail from './PhotoDetail';
 import GridList from '../common/List/GridList';
 import CollectionItem from '../common/item/CollectionItem';
 import Tags from '../common/Tags';
+import PhotoList from '../common/List/PhotoList';
 
-const PhotoSections = ({ data }) => {
+const PhotoSections = ({ data, relatedPhotos }) => {
   const a = 1;
   return (
     <Container>
       <PhotoDetail />
       <RelatedSection title="photos">
-        연관 리스트 내용
+        <PhotoList data={relatedPhotos?.results} />
       </RelatedSection>
       <RelatedSection title="collections">
         <GridList

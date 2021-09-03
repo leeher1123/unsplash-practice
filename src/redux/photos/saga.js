@@ -24,10 +24,20 @@ const getPhotoById = function* ({ payload }) {
   yield put(Action.Creators.setPhotoById(result.data));
 };
 
+const getRelatedPhotos = function* ({ payload }) {
+  const result = yield call(API.getRelatedPhotos, payload);
+  if (_.isEmpty(result.data)) return;
+  yield put(Action.Creators.setRelatedPhotos({
+    id: payload,
+    data: result.data,
+  }));
+};
+
 function* saga() {
   yield all([
     takeLatest(Action.Types.GET_PHOTOS, getPhotos),
     takeLatest(Action.Types.GET_PHOTO_BY_ID, getPhotoById),
+    takeLatest(Action.Types.GET_RELATED_PHOTOS, getRelatedPhotos),
   ]);
 }
 
