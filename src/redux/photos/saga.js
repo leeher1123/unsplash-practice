@@ -18,9 +18,15 @@ const getPhotos = function* ({ payload }) {
   yield put(Action.Creators.setPhotos(nextPhotos));
 };
 
+const getPhotoById = function* ({ payload }) {
+  const result = yield call(API.getPhotoById, payload);
+  if (_.isEmpty(result.data)) return;
+};
+
 function* saga() {
   yield all([
     takeLatest(Action.Types.GET_PHOTOS, getPhotos),
+    takeLatest(Action.Types.GET_PHOTO_BY_ID, getPhotoById),
   ]);
 }
 

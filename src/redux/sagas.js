@@ -4,6 +4,7 @@ import appSaga from './app/saga';
 import photosSaga from './photos/saga';
 import searchSaga from './search/saga';
 import topicsSaga from './topics/saga';
+import popupSaga from './popup/saga';
 
 function* sagas() {
   yield all([
@@ -11,6 +12,7 @@ function* sagas() {
     fork(photosSaga),
     fork(searchSaga),
     fork(topicsSaga),
+    fork(popupSaga),
   ]);
 }
 

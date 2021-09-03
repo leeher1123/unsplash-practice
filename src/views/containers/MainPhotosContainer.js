@@ -44,7 +44,7 @@ const MainPhotosContainer = () => {
 };
 
 const Container = styled.div`
-
+  padding-top: 80px;
 `;
 
 export default MainPhotosContainer;
