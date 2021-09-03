@@ -4,6 +4,10 @@ import { Action } from './slice';
 import { Action as PhotosAction } from '../photos/slice';
 
 const openPhotoPopup = function* ({ payload }) {
+  yield put(Action.Creators.updateState({
+    openPopup: true,
+    currentPhotoId: payload,
+  }));
   yield put(PhotosAction.Creators.getPhotoById(payload));
 };
 

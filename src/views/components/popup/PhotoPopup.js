@@ -1,24 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const PhotoPopup = () => {
-  const a = 1;
-  return (
-    <Container>
-      <Track>
-        <Contents>
-          <Inner>
-            photoDetail
-            relatedPhotos
-            relatedCollections
-            relatedTags
-          </Inner>
-        </Contents>
-      </Track>
-      <Screen />
-    </Container>
-  );
-};
+import PhotoSections from '../Photos/PhotoSections';
+
+const PhotoPopup = ({ data, onClose = () => {} }) => (
+  <Container>
+    <Track>
+      <Contents>
+        <Inner>
+          <PhotoSections data={data} />
+        </Inner>
+      </Contents>
+    </Track>
+    <Screen onClick={onClose} />
+  </Container>
+);
 
 const Container = styled.div`
   position: fixed;
@@ -29,13 +25,6 @@ const Container = styled.div`
   z-index: 1000;
 `;
 
-const Contents = styled.div`
-  position: relative;
-  max-width: 85vw;
-  margin: 0 auto;
-  z-index: 10;
-`;
-
 const Track = styled.div`
   height: 100vh;
   padding-top: 50px;
@@ -43,8 +32,17 @@ const Track = styled.div`
   overflow-y: auto;
 `;
 
-const Inner = styled.div`
+const Contents = styled.div`
+  position: relative;
+  max-width: 85vw;
+  margin: 0 auto;
+  z-index: 10;
   background: #fff;
+`;
+
+const Inner = styled.div`
+  max-width: 1320px;
+  padding: 0 12px;
 `;
 
 const Screen = styled.div`

@@ -1,11 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { useDispatch } from 'react-redux';
+
 import PhotoItem from '../item/PhotoItem';
 import { recomposePhotos } from '../../../../lib/photos';
+import { Action } from '../../../../redux/popup/slice';
 
 const PhotoList = ({ data }) => {
   const newData = recomposePhotos(data);
+  const dispatch = useDispatch();
+  const onClickItem = (id) => {
+    dispatch(Action.Creators.openPhotoPopup(id));
+  };
 
   return (
     <Container>
@@ -16,7 +23,10 @@ const PhotoList = ({ data }) => {
               {
                 group.map((item) => (
                   <ItemWrapper>
-                    <PhotoItem item={item} />
+                    <PhotoItem
+                      item={item}
+                      onClick={() => onClickItem(item.id)}
+                    />
                   </ItemWrapper>
                 ))
               }
@@ -29,7 +39,7 @@ const PhotoList = ({ data }) => {
 };
 
 const Container = styled.div`
-  
+
 `;
 
 const Row = styled.div`

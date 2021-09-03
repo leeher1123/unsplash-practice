@@ -2,15 +2,30 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import styled from 'styled-components';
 
+import { useDispatch, useSelector } from 'react-redux';
+
 import PhotoPopup from '../components/popup/PhotoPopup';
+import { Action } from '../../redux/popup/slice';
 
 const PhotoPopupContainer = () => {
-  const a = 1;
+  const dispatch = useDispatch();
+  const { openPopup, currentPhotoId } = useSelector((state) => state.popup);
+  const { photo } = useSelector((state) => state.photos);
+
+  const onClose = () => {
+    dispatch(Action.Creators.closePhotoPopup());
+  };
+
+  if (!openPopup || !currentPhotoId || !photo[currentPhotoId]) return null;
+
   return (
     <Container>
       {
         ReactDOM.createPortal(
-          <PhotoPopup />,
+          <PhotoPopup
+            onClose={onClose}
+            data={photo[currentPhotoId]}
+          />,
           document.getElementById('popup'),
         )
       }
