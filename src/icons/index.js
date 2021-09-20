@@ -83,3 +83,37 @@ export const IconArrowRight = () => (
     <path d="M11.3333 7.3333l2-2L24 16 13.3333 26.6666l-2-2L20 16l-8.6667-8.6667z" />
   </svg>
 );
+
+export const IconHeart = () => (
+  <svg
+    width="32"
+    height="32"
+    className="BWSrD"
+    viewBox="0 0 32 32"
+    version="1.1"
+    aria-hidden="false"
+  >
+    <path
+      d="M17.4 29c-.8.8-2 .8-2.8 0l-12.3-12.8c-3.1-3.1-3.1-8.2 0-11.4 3.1-3.1 8.2-3.1 11.3 0l2.4 2.8 2.3-2.8c3.1-3.1 8.2-3.1 11.3 0 3.1 3.1 3.1 8.2 0 11.4l-12.2 12.8z"
+    />
+  </svg>
+);
+
+export const IconPlus = () => (
+  <svg
+    width="32"
+    height="32"
+    className="_2rdbO"
+    viewBox="0 0 32 32"
+    version="1.1"
+    aria-hidden="false"
+  >
+    <path d="M14 3h4v26h-4zM29 14v4h-26v-4z" />
+  </svg>
+);
+
+export const IconArrow = () => (
+  <svg width="32" height="32" className="fpkc9" viewBox="0 0 32 32" version="1.1" aria-hidden="false">
+    <path d="M9.9 11.5l6.1 6.1 6.1-6.1 1.9 1.9-8 8-8-8 1.9-1.9z" />
+  </svg>
+);

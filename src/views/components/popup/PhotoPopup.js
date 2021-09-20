@@ -42,6 +42,7 @@ const Contents = styled.div`
   z-index: 10;
   background: #fff;
   padding-bottom: 80px;
+  border-radius: 4px;
 `;
 
 const Inner = styled.div`

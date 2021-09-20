@@ -16,7 +16,7 @@ const TopicsLnb = ({ data }) => (
 );
 
 const Container = styled.div`
-
+  background-color: #fff;
 `;
 
 const MenuItem = styled(Link)`

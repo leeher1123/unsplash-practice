@@ -12,6 +12,12 @@ const SearchLnb = ({ data }) => (
 );
 
 const Container = styled.div`
+  position: fixed;
+  top: 62px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
