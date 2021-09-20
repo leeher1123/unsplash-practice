@@ -34,7 +34,7 @@ const SearchContainer = () => {
   }, [query]);
 
   const renderCollectionItem = (item, index) => <CollectionItem item={item} index={index} />;
-  const renderUserItem = (item, index) => <UserItem item={item} index={index} />;
+  const renderUserItem = (item, index) => <UserItem user={item} index={index} />;
 
   return (
     <Container>

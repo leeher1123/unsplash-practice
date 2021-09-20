@@ -52,7 +52,7 @@ const CollectionItem = ({ item }) => (
 );
 
 const Container = styled.div`
-  
+  margin-bottom: 40px;
 `;
 
 const Thumb = styled(Link)`
