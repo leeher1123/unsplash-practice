@@ -42,6 +42,9 @@ const Container = styled.div`
 const User = styled.div`
   display: flex;
   img {
+    width: 64px;
+    height: 64px;
+    object-fit: cover;
     border-radius: 50%;
     margin-right: 15px;
   }
@@ -50,7 +53,11 @@ const User = styled.div`
 const Contents = styled.div`
   flex: 2;
   padding: 10px 0;
+  min-width: 70px;
   h2 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: auto;
     font-size: 18px;
     font-weight: 700;
     color: #111;
@@ -75,6 +82,7 @@ const PlusButton = styled(DefaultButton)`
   justify-content: center;
   border-color: #d1d1d1;
   border-radius: 4px;
+  margin-left: 10px;
   width: 42px;
   height: 32px;
   transition: .2s;
@@ -96,6 +104,7 @@ const Button = styled(DefaultButton)`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-top: 15px;
   height: 32px;
   padding: 0 11px;
   font-size: 14px;
