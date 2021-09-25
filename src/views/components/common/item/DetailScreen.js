@@ -12,7 +12,9 @@ const DetailScreen = ({ item }) => (
     </TopButtons>
     <UserInfo>
       <User>
-        <img src={item.user.profile_image.small} alt="" />
+        <Image>
+          <img src={item.user.profile_image.small} alt="" />
+        </Image>
         <Contents>
           <h3>{item.user.first_name}</h3>
           {
@@ -28,6 +30,7 @@ const DetailScreen = ({ item }) => (
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   position: absolute;
   top: 0;
   left: 0;
@@ -45,11 +48,8 @@ const Container = styled.div`
 `;
 
 const TopButtons = styled.div`
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 300px;
 `;
 
 const Button = styled.button`
@@ -71,15 +71,14 @@ const Button = styled.button`
 const UserInfo = styled.div`
   display: flex;
   justify-content: space-between;
-  width: 100%;
-  height: 32px;
 `;
 
 const User = styled.div`
   display: flex;
-  align-items: flex-end;
-  width: 100%;
-  height: 100%;
+`;
+
+const Image = styled.div`
+  margin-right: 10px;
   img {
     width: 32px;
     height: 32px;
@@ -88,7 +87,6 @@ const User = styled.div`
 `;
 
 const Contents = styled.div`
-  margin-left: 10px;
   color: #fff;
   opacity: .8;
   line-height: 1.35;

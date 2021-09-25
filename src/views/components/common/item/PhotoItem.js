@@ -7,19 +7,19 @@ const PhotoItem = ({ item, onClick = () => {} }) => (
   <Container onClick={onClick}>
     <Image>
       <img src={item.urls.regular} alt="사진" />
-      <DetailScreen item={item} />
     </Image>
+    <DetailScreen item={item} />
   </Container>
 );
 
 const Container = styled.div`
-  
+  position: relative;
 `;
 
 const Image = styled.div`
-  position: relative;
   img {
     width: 100%;
+    object-fit: cover;
   }
 `;
 
