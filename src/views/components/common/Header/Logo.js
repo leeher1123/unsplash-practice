@@ -30,6 +30,7 @@ const Text = styled.div`
   p {
     font-size: 13px;
     margin-top: 3px;
+    font-weight: 500;
   }
 `;
 

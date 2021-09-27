@@ -9,7 +9,6 @@ const Nav = ({ totalNum }) => {
   const { query, category } = useParams();
 
   const searchMenus = getSearchMenus(query, category, { totalNum });
-
   return (
     <Container>
       {
@@ -24,7 +23,12 @@ const Nav = ({ totalNum }) => {
             {icon}
             {name}
             {' '}
-            {num}
+            {
+              num >= 1000 ? parseFloat((num / 1000).toFixed(1)) : num
+            }
+            {
+              num >= 1000 ? <span>k</span> : null
+            }
           </NavItem>
         ))
       }
