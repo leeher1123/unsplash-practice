@@ -30,7 +30,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     line-height: 1;
-    font-family: '-apple-system', 'BlinkMacSystemFont', 'Apple SD Gothic Neo', Sans-Serif;
+    font-family: 'Noto Sans KR', sans-serif;
   }
 
   ol, ul {
