@@ -1,9 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
+import qs from 'qs';
+
+import FilterLink from '../LnbFilter/FilterLink';
 
 const DropdownItem = ({ children, to, className }) => {
   const { query } = useParams();
+  const location = useLocation();
+  const qsParams = qs.parse(location.search, { ignoreQueryPrefix: true });
   const colors = ['white', 'black', 'yellow', 'orange', 'red', 'purple', 'magenta', 'green', 'teal', 'blue'];
   return (
     <Container to={to} className={className}>
@@ -12,7 +17,11 @@ const DropdownItem = ({ children, to, className }) => {
         Tones
         <ColorItems>
           {
-            colors.map((item) => <ColorItem className={item} to={`/search/photos/${query}?color=red`} />)
+            colors.map((item) => (
+              <FilterLink options={{ color: item }}>
+                <ColorItem className={item} />
+              </FilterLink>
+            ))
           }
         </ColorItems>
       </Tones>
@@ -56,7 +65,7 @@ const ColorItems = styled.div`
   width: 126px;
 `;
 
-const ColorItem = styled(Link)`
+const ColorItem = styled.div`
   z-index: 1;
   width: 16px;
   height: 16px;

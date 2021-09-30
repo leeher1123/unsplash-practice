@@ -9,6 +9,7 @@ import qs from 'qs';
 
 import FilterItem from './FilterItem';
 import DropdownItem from '../Dropdown/DropdownItem';
+import FilterLink from './FilterLink';
 
 const LnbFilter = () => {
   const { query } = useParams();
@@ -17,22 +18,28 @@ const LnbFilter = () => {
   return (
     <Container>
       <FilterItem dropdownItems={[
-        <DropdownItem to={`/search/photos/${query}`}>Any orientation</DropdownItem>,
-        <DropdownItem to={`/search/photos/${query}?${qs.stringify({
-          ...qsParams,
-          orientation: 'landscape',
-        })}`}
-        >
-          <Box className="landscape" />
-          Landscape
+        <DropdownItem>
+          <FilterLink options={{ orientation: undefined }}>
+            Any orientation
+          </FilterLink>
         </DropdownItem>,
-        <DropdownItem to={`/search/photos/${query}?orientation=portrait`}>
-          <Box className="portrait" />
-          Portrait
+        <DropdownItem>
+          <FilterLink options={{ orientation: 'landscape' }}>
+            <Box className="landscape" />
+            Landscape
+          </FilterLink>
         </DropdownItem>,
-        <DropdownItem to={`/search/photos/${query}?orientation=squarish`}>
-          <Box className="square" />
-          Square
+        <DropdownItem>
+          <FilterLink options={{ orientation: 'portrait' }}>
+            <Box className="portrait" />
+            Portrait
+          </FilterLink>
+        </DropdownItem>,
+        <DropdownItem>
+          <FilterLink options={{ orientation: 'squarish' }}>
+            <Box className="square" />
+            Square
+          </FilterLink>
         </DropdownItem>,
       ]}
       >
@@ -40,24 +47,35 @@ const LnbFilter = () => {
         <VscTriangleDown />
       </FilterItem>
       <FilterItem dropdownItems={[
-        <DropdownItem to={`/search/photos/${query}`}>Any color</DropdownItem>,
-        <DropdownItem
-          to={`/search/photos/${query}?color=black_and_white`}
-          className="mb"
-        >
-          Black and white
+        <DropdownItem>
+          <FilterLink options={{ color: undefined }}>
+            Any color
+          </FilterLink>
+        </DropdownItem>,
+        <DropdownItem className="mb">
+          <FilterLink options={{ color: 'black_and_white' }}>
+            Black and white
+          </FilterLink>
         </DropdownItem>,
       ]}
       >
-        any color
+        Any color
         <VscTriangleDown />
       </FilterItem>
       <FilterItem dropdownItems={[
-        <DropdownItem to={`/search/photos/${query}`}>Relevance</DropdownItem>,
-        <DropdownItem to={`/search/photos/${query}?order_by=latest`}>Newest</DropdownItem>,
+        <DropdownItem>
+          <FilterLink options={{ order_by: undefined }}>
+            Relevance
+          </FilterLink>
+        </DropdownItem>,
+        <DropdownItem>
+          <FilterLink options={{ order_by: 'latest' }}>
+            Newest
+          </FilterLink>
+        </DropdownItem>,
       ]}
       >
-        sort by &nbsp;
+        Sort by &nbsp;
         <span>Relevance</span>
         <VscTriangleDown />
       </FilterItem>
@@ -86,16 +104,6 @@ const Box = styled.div`
     width: 18px;
     height: 18px;
   }
-`;
-
-const ColorItems = styled.div`
-  display: flex;
-  flex-wrap: wrap;
-`;
-
-const ColorItem = styled.div`
-  width: 24px;
-  height: 24px;
 `;
 
 export default LnbFilter;

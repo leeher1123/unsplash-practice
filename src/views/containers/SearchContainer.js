@@ -32,7 +32,7 @@ const SearchContainer = () => {
   const searchPhotos = () => {
     dispatch(Action.Creators.searchPhotos({
       query,
-      per_page: 30,
+      per_page: 5,
       orientation: qsParams.orientation,
       color: qsParams.color,
       order_by: qsParams.order_by,

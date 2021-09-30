@@ -52,9 +52,6 @@ const Container = styled.div`
 
 const ItemWrapper = styled.div`
   position: relative;
-  &.isActive {
-    background: #eee;
-  }
 `;
 
 const ActiveIcon = styled.div`
