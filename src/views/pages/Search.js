@@ -10,7 +10,7 @@ const Search = () => (
 );
 
 const Container = styled.div`
-
+  padding-top: 118px;
 `;
 
 export default Search;

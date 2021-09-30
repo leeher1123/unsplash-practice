@@ -41,27 +41,25 @@ const SearchContainer = () => {
       <SearchLnb data={{ photos, collections, users }} />
 
       <ContentContainer>
-        <Fixed>
-          <RelatedSearchesMenu menu={related_searches} />
+        <RelatedSearchesMenu menu={related_searches} />
 
-          <Switch>
-            <Route path="/search/photos/:query">
-              <PhotoList data={photos.results} />
-            </Route>
-            <Route path="/search/collections/:query">
-              <GridList
-                data={collections.results}
-                renderItem={renderCollectionItem}
-              />
-            </Route>
-            <Route path="/search/users/:query">
-              <GridList
-                data={users.results}
-                renderItem={renderUserItem}
-              />
-            </Route>
-          </Switch>
-        </Fixed>
+        <Switch>
+          <Route path="/search/photos/:query">
+            <PhotoList data={photos.results} />
+          </Route>
+          <Route path="/search/collections/:query">
+            <GridList
+              data={collections.results}
+              renderItem={renderCollectionItem}
+            />
+          </Route>
+          <Route path="/search/users/:query">
+            <GridList
+              data={users.results}
+              renderItem={renderUserItem}
+            />
+          </Route>
+        </Switch>
       </ContentContainer>
     </Container>
   );
@@ -69,13 +67,6 @@ const SearchContainer = () => {
 
 const Container = styled.div`
 
-`;
-
-const Fixed = styled.div`
-  position: relative;
-  top: 130px;
-  left: 0;
-  right: 0;
 `;
 
 export default SearchContainer;
