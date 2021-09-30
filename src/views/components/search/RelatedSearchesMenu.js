@@ -29,6 +29,7 @@ const Container = styled.div`
     font-size: 46px;
     font-weight: bold;
     color: #111;
+    text-transform: capitalize;
   }
 `;
 
