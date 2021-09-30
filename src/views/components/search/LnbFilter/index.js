@@ -1,82 +1,102 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import { VscTriangleDown } from 'react-icons/vsc';
-
-import { useLocation, useParams } from 'react-router-dom';
-
-import qs from 'qs';
 
 import FilterItem from './FilterItem';
 import DropdownItem from '../Dropdown/DropdownItem';
 import FilterLink from './FilterLink';
 
 const LnbFilter = () => {
-  const { query } = useParams();
-  const location = useLocation();
-  const qsParams = qs.parse(location.search, { ignoreQueryPrefix: true });
+  const [currentOrientation, setCurrentOrientation] = useState('Any orientation');
+  const [currentColor, setCurrentColor] = useState('Any color');
+  const [currentRelevance, setCurrentRelevance] = useState('Relevance');
   return (
     <Container>
       <FilterItem dropdownItems={[
         <DropdownItem>
-          <FilterLink options={{ orientation: undefined }}>
+          <FilterLink
+            options={{ orientation: undefined }}
+            onClickLink={() => setCurrentOrientation('Any orientation')}
+          >
             Any orientation
           </FilterLink>
         </DropdownItem>,
         <DropdownItem>
-          <FilterLink options={{ orientation: 'landscape' }}>
+          <FilterLink
+            options={{ orientation: 'landscape' }}
+            onClickLink={() => setCurrentOrientation('Landscape')}
+          >
             <Box className="landscape" />
             Landscape
           </FilterLink>
         </DropdownItem>,
         <DropdownItem>
-          <FilterLink options={{ orientation: 'portrait' }}>
+          <FilterLink
+            options={{ orientation: 'portrait' }}
+            onClickLink={() => setCurrentOrientation('Portrait')}
+          >
             <Box className="portrait" />
             Portrait
           </FilterLink>
         </DropdownItem>,
         <DropdownItem>
-          <FilterLink options={{ orientation: 'squarish' }}>
+          <FilterLink
+            options={{ orientation: 'squarish' }}
+            onClickLink={() => setCurrentOrientation('Square')}
+          >
             <Box className="square" />
             Square
           </FilterLink>
         </DropdownItem>,
       ]}
       >
-        Any orientation
+        {currentOrientation}
         <VscTriangleDown />
       </FilterItem>
       <FilterItem dropdownItems={[
         <DropdownItem>
-          <FilterLink options={{ color: undefined }}>
+          <FilterLink
+            options={{ color: undefined }}
+            onClickLink={() => setCurrentColor('Any color')}
+          >
             Any color
           </FilterLink>
         </DropdownItem>,
         <DropdownItem className="mb">
-          <FilterLink options={{ color: 'black_and_white' }}>
+          <FilterLink
+            options={{ color: 'black_and_white' }}
+            onClickLink={() => setCurrentColor('Black and white')}
+          >
             Black and white
           </FilterLink>
         </DropdownItem>,
       ]}
       >
-        Any color
+        {currentColor}
         <VscTriangleDown />
       </FilterItem>
       <FilterItem dropdownItems={[
         <DropdownItem>
-          <FilterLink options={{ order_by: undefined }}>
+          <FilterLink
+            options={{ order_by: undefined }}
+            onClickLink={() => setCurrentRelevance('Relevance')}
+          >
             Relevance
           </FilterLink>
         </DropdownItem>,
         <DropdownItem>
-          <FilterLink options={{ order_by: 'latest' }}>
+          <FilterLink
+            options={{ order_by: 'latest' }}
+            onClickLink={() => setCurrentRelevance('Newest')}
+          >
             Newest
           </FilterLink>
         </DropdownItem>,
       ]}
       >
         Sort by &nbsp;
-        <span>Relevance</span>
+        <span>{currentRelevance}</span>
         <VscTriangleDown />
       </FilterItem>
     </Container>

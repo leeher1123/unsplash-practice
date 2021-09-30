@@ -27,21 +27,21 @@ const SearchContainer = () => {
     photos, collections, users, related_searches,
   } = useSelector((state) => state.search);
 
-  const qsParams = qs.parse(location.search, { ignoreQueryPrefix: true });
+  const { orientation, color, order_by } = qs.parse(location.search, { ignoreQueryPrefix: true });
 
   const searchPhotos = () => {
     dispatch(Action.Creators.searchPhotos({
       query,
       per_page: 5,
-      orientation: qsParams.orientation,
-      color: qsParams.color,
-      order_by: qsParams.order_by,
+      orientation,
+      color,
+      order_by,
     }));
   };
 
   useEffect(() => {
     searchPhotos();
-  }, [query, qsParams]);
+  }, [query, orientation, color, order_by]);
 
   const renderCollectionItem = (item, index) => <CollectionItem item={item} index={index} />;
   const renderUserItem = (item, index) => <UserItem user={item} index={index} />;

@@ -3,15 +3,17 @@ import styled from 'styled-components';
 import qs from 'qs';
 import { Link, useLocation, useParams } from 'react-router-dom';
 
-const FilterLink = ({ children, options }) => {
+const FilterLink = ({ children, options, onClickLink }) => {
   const { query } = useParams();
   const location = useLocation();
   const qsParams = qs.parse(location.search, { ignoreQueryPrefix: true });
   return (
-    <Container to={`/search/photos/${query}?${qs.stringify({
-      ...qsParams,
-      ...options,
-    })}`}
+    <Container
+      to={`/search/photos/${query}?${qs.stringify({
+        ...qsParams,
+        ...options,
+      })}`}
+      onClick={onClickLink}
     >
       {children}
     </Container>

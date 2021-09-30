@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import cn from 'classnames';
-
 import Dropdown from '../Dropdown';
+import ContainChecker from '../../common/ContainChecker';
 
 const FilterItem = ({ children, dropdownItems = [] }) => {
   const [visibleDropdown, setVisibleDropdown] = useState(false);
@@ -14,14 +13,21 @@ const FilterItem = ({ children, dropdownItems = [] }) => {
   const onClickItem = () => {
     setVisibleDropdown(false);
   };
+  const check = (isContain) => {
+    if (!isContain) {
+      setVisibleDropdown(isContain);
+    }
+  };
   return (
     <Container>
-      <FilterName onClick={onClick}>{ children }</FilterName>
-      <Dropdown
-        isVisible={visibleDropdown}
-        items={dropdownItems}
-        onClickItem={onClickItem}
-      />
+      <ContainChecker check={check}>
+        <FilterName onClick={onClick}>{ children }</FilterName>
+        <Dropdown
+          isVisible={visibleDropdown}
+          items={dropdownItems}
+          onClickItem={onClickItem}
+        />
+      </ContainChecker>
     </Container>
   );
 };
