@@ -54,14 +54,12 @@ const FilterName = styled.div`
     margin-left: 8px;
     transition: .2s;
   }
-
   &:hover {
     color: #111;
     svg {
       fill: #111;
     }
   }
-
   span {
     color: #111;
   }

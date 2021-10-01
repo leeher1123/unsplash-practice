@@ -13,20 +13,17 @@ const Dropdown = ({ isVisible, items, onClickItem }) => {
   return (
     <Container className={cn({ isVisible })}>
       {
-        items.map((item, index) => {
-          console.log(1);
-          return (
-            <ItemWrapper
-              onClick={() => onClick(index)}
-              className={cn({ isActive: currentIndex === index })}
-            >
-              <ActiveIcon>
-                <IconChecked />
-              </ActiveIcon>
-              {item}
-            </ItemWrapper>
-          );
-        })
+        items.map((item, index) => (
+          <ItemWrapper
+            onClick={() => onClick(index)}
+            className={cn({ isActive: currentIndex === index })}
+          >
+            <ActiveIcon>
+              <IconChecked />
+            </ActiveIcon>
+            {item}
+          </ItemWrapper>
+        ))
       }
     </Container>
   );
@@ -40,7 +37,6 @@ const Container = styled.div`
   border: 1px solid #ddd;
   background: #fff;
   border-radius: 4px;
-  min-width: 180px;
   box-shadow: 0 8px 16px rgb(0 0 0 / 16%);
   transform-origin: 80% 20%;
   transform: scale(0);
