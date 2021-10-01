@@ -145,3 +145,18 @@ export const IconDownload = () => (
     <path d="M25.8 15.5l-7.8 7.2v-20.7h-4v20.7l-7.8-7.2-2.7 3 12.5 11.4 12.5-11.4z" />
   </svg>
 );
+
+export const IconChecked = () => (
+  <svg
+    width="32"
+    height="32"
+    className="q_36N"
+    viewBox="0 0 32 32"
+    version="1.1"
+    aria-hidden="false"
+  >
+    <path
+      d="M13.3334 23.2l-6.66671-6.6667 1.86666-1.8667 4.80005 4.8L23.4667 9.33331 25.3334 11.2l-12 12z"
+    />
+  </svg>
+);

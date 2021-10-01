@@ -123,6 +123,7 @@ const Track = styled.div`
   display: flex;
   align-items: center;
   overflow-x: auto;
+  white-space: nowrap;
   -ms-overflow-style: none;
   scrollbar-width: none;
   scroll-behavior: smooth;

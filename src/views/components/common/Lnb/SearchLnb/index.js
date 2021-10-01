@@ -2,12 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Nav from './Nav';
-import Filter from './Filter';
+import LnbFilterContainer from '../../../../containers/LnbFilterContainer';
 
 const SearchLnb = ({ data }) => (
   <Container>
     <Nav totalNum={data} />
-    <Filter />
+    <LnbFilterContainer />
   </Container>
 );
 
