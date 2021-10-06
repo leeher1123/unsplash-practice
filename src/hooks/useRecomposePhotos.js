@@ -1,4 +1,4 @@
-export const recomposePhotos = (data) => {
+export const useRecomposePhotos = (data) => {
   const result = [[], [], []];
   const photosGroupHeight = [0, 0, 0];
 
