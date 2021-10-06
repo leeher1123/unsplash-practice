@@ -3,16 +3,30 @@ import styled, { css } from 'styled-components';
 
 import { useDispatch } from 'react-redux';
 
+import { useHistory, useLocation } from 'react-router-dom';
+
+import { useMediaMatch } from 'rooks';
+
 import PhotoItem from '../item/PhotoItem';
 import { Action } from '../../../../redux/popup/slice';
 import { useRecomposePhotos } from '../../../../hooks/useRecomposePhotos';
 import { media } from '../../../../lib/styled';
+import { breakPoint } from '../../../../constants/breakPoint';
 
 const PhotoList = ({ data = [] }) => {
   const newData = useRecomposePhotos(data);
   const dispatch = useDispatch();
+  const history = useHistory();
+  const isSm = useMediaMatch(`(max-width: ${breakPoint.SM}px)`);
+
   const onClickItem = (id) => {
-    dispatch(Action.Creators.openPhotoPopup(id));
+    const photoPageUrl = `/photos/${id}`;
+    if (isSm) {
+      history.push(photoPageUrl);
+    } else {
+      dispatch(Action.Creators.openPhotoPopup(id));
+      window.history.pushState({}, null, photoPageUrl);
+    }
   };
 
   return (
