@@ -1,18 +1,35 @@
+import { useMediaMatch } from 'rooks';
+
+import { useEffect, useState } from 'react';
+
+import { breakPoint } from '../constants/breakPoint';
+
 export const useRecomposePhotos = (data) => {
-  const result = [[], [], []];
-  const photosGroupHeight = [0, 0, 0];
+  const isLg = useMediaMatch(`(min-width: ${breakPoint.MD}px)`);
+  const isMd = useMediaMatch(`(min-width: ${breakPoint.SM}px) and (max-width: ${breakPoint.MD}px)`);
+  const isSm = useMediaMatch(`(max-width: ${breakPoint.SM}px)`);
 
-  for (let i = 0; i < data.length; i++) {
-    const minValue = Math.min(...photosGroupHeight);
-    const minHeightGroupIndex = photosGroupHeight.indexOf(minValue);
+  const initData = isLg ? [[], [], []] : isMd ? [[], []] : [[]];
+  const initGroupHeight = isLg ? [0, 0, 0] : isMd ? [0, 0] : [0];
+  const [newData, setNewData] = useState(initData);
 
-    const { width } = data[i];
-    const { height } = data[i];
-    const ratioHeight = height / width;
+  useEffect(() => {
+    const result = initData;
+    const photosGroupHeight = initGroupHeight;
 
-    result[minHeightGroupIndex].push(data[i]);
-    photosGroupHeight[minHeightGroupIndex] += ratioHeight;
-  }
+    for (let i = 0; i < data.length; i++) {
+      const minValue = Math.min(...photosGroupHeight);
+      const minHeightGroupIndex = photosGroupHeight.indexOf(minValue);
 
-  return result;
+      const { width } = data[i];
+      const { height } = data[i];
+      const ratioHeight = height / width;
+
+      result[minHeightGroupIndex].push(data[i]);
+      photosGroupHeight[minHeightGroupIndex] += ratioHeight;
+      setNewData(result);
+    }
+  }, [data, isLg, isMd, isSm]);
+
+  return newData;
 };
