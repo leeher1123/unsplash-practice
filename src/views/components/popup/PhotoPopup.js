@@ -47,6 +47,7 @@ const Contents = styled.div`
 
 const Inner = styled.div`
   max-width: 1320px;
+  margin: 0 auto;
   padding: 0 12px;
 `;
 

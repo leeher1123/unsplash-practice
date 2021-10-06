@@ -59,6 +59,7 @@
     "react/prop-types": "off",
     "camelcase": "off",
     "no-plusplus": "off",
-    "no-useless-return": "off"
+    "no-useless-return": "off",
+    "no-nested-ternary": "off"
   }
 }

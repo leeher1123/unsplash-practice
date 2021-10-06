@@ -23,7 +23,7 @@ const DetailImage = styled.div`
   display: flex;
   justify-content: center;
   img {
-    max-width: 767px;
+    max-width: 100%;
     max-height: 781px;
   }
 `;
