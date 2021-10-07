@@ -1,9 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { Link, useParams } from 'react-router-dom';
 import cn from 'classnames';
 
 import { getSearchMenus } from '../../../../../lib/search';
+import { media } from '../../../../../lib/styled';
 
 const Nav = ({ totalNum }) => {
   const { query, category } = useParams();
@@ -23,12 +24,14 @@ const Nav = ({ totalNum }) => {
             {icon}
             {name}
             {' '}
-            {
-              num >= 1000 ? parseFloat((num / 1000).toFixed(1)) : num
-            }
-            {
-              num >= 1000 ? <span>k</span> : null
-            }
+            <Num>
+              {
+                num >= 1000 ? parseFloat((num / 1000).toFixed(1)) : num
+              }
+              {
+                num >= 1000 ? <span>k</span> : null
+              }
+            </Num>
           </NavItem>
         ))
       }
@@ -59,6 +62,9 @@ const NavItem = styled(Link)`
     fill: #d1d1d1;
     margin-right: 8px;
     transition: .2s;
+    ${media.sm(css`
+      display: none;
+    `)}
   }
 
   &.isActive,
@@ -77,6 +83,13 @@ const NavItem = styled(Link)`
   & + & {
     margin-left: 32px;
   }
+`;
+
+const Num = styled.div`
+  display: flex;
+  ${media.sm(css`
+    display: none;
+  `)}
 `;
 
 export default Nav;
