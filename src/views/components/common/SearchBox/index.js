@@ -76,6 +76,9 @@ const Form = styled.form`
     background: #fff;
     height: 54px;
     border-radius: 6px;
+    ${media.sm(css`
+      display: none;
+    `)}
   }
 `;
 
