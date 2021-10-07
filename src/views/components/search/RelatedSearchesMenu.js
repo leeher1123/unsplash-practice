@@ -23,7 +23,7 @@ const RelatedSearchesMenu = ({ menu }) => {
 const Container = styled.div`
   padding: 60px 12px 72px;
   h1 {
-    width: 864px;
+    width: 100%;
     height: 55px;
     margin-bottom: 16px;
     font-size: 46px;
