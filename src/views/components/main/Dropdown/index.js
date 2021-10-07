@@ -20,7 +20,7 @@ const Container = styled.div`
   position: absolute;
   top: 55px;
   right: 21px;
-  z-index: 1001;
+  z-index: 1000;
   border: 1px solid rgba(170, 170, 170, 0.5);
   box-shadow: 0 8px 16px rgb(0 0 0 / 16%);
   border-radius: 4px;

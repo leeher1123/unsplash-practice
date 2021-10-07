@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import Dropdown from '../Dropdown';
 import ContainChecker from '../../common/ContainChecker';
+import { media } from '../../../../lib/styled';
 
 const FilterItem = ({ children, dropdownItems = [] }) => {
   const [visibleDropdown, setVisibleDropdown] = useState(false);
@@ -37,6 +38,9 @@ const Container = styled.div`
   & + & {
     margin-left: 24px;
   }
+  ${media.md(css`
+    display: none;
+  `)};
 `;
 
 const FilterName = styled.div`
