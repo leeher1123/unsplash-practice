@@ -21,7 +21,6 @@ const Banner = () => (
 
 const Container = styled.div`
   background: url('https://images.unsplash.com/photo-1518514854541-fe58ae2a5ef1?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80') 50% / cover no-repeat;
-  max-width: 1320px;
   padding: 144px 150px 134px;
   ${media.sm(css`
     padding: 80px 12px 62px;
@@ -30,6 +29,7 @@ const Container = styled.div`
 
 const Content = styled.div`
   max-width: 800px;
+  margin: 0 auto;
   color: #fff;
   font-weight: 400;
   font-size: 18px;
@@ -52,12 +52,6 @@ const Content = styled.div`
       color: #fff;
     }
   }
-  ${media.lg(css`
-    margin: 0 auto;
-  `)}
-  ${media.md(css`
-    margin: 0 auto;
-  `)};
   ${media.sm(css`
     h1 {
       font-size: 24px;
