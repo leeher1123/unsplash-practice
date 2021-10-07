@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 import { VscTriangleDown } from 'react-icons/vsc';
 
@@ -8,6 +8,8 @@ import cn from 'classnames';
 import FilterItem from './FilterItem';
 import DropdownItem from '../Dropdown/DropdownItem';
 import FilterLink from './FilterLink';
+import { media } from '../../../../lib/styled';
+import { IconFilter } from '../../../../icons';
 
 const LnbFilter = () => {
   const [currentOrientation, setCurrentOrientation] = useState('Any orientation');
@@ -16,6 +18,9 @@ const LnbFilter = () => {
   const colors = ['white', 'black', 'yellow', 'orange', 'red', 'purple', 'magenta', 'green', 'teal', 'blue'];
   return (
     <Container>
+      <FilterIcon>
+        <IconFilter />
+      </FilterIcon>
       <FilterItem dropdownItems={[
         <DropdownItem className="orientation">
           <FilterLink
@@ -128,18 +133,41 @@ const Container = styled.div`
   align-items: center;
 `;
 
+const FilterIcon = styled.div`
+  display: none;
+  cursor: pointer;
+  svg {
+    width: 18px;
+    height: 18px;
+    fill: #767676;
+  }
+  &:hover {
+    svg {
+      fill: #111;
+    }
+  }
+  ${media.md(css`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  `)};
+`;
+
 const Box = styled.div`
   background: #e4e4e4;
   border: 1px solid rgb(177, 177, 177);
   margin-right: 10px;
+
   &.landscape {
     width: 18px;
     height: 12px;
   }
+
   &.portrait {
     width: 12px;
     height: 18px;
   }
+
   &.square {
     width: 18px;
     height: 18px;
@@ -149,6 +177,7 @@ const Box = styled.div`
 const Tones = styled.div`
   padding: 8px 16px 8px 26px;
   height: 90px;
+
   h3 {
     font-size: 14px;
     font-weight: 400;
@@ -182,37 +211,48 @@ const ColorItem = styled.div`
   background: #aaa;
   border-radius: 50%;
   margin: 4px;
+
   &:hover {
     background: #f5f5f5;
   }
+
   &.white {
     background: #fff;
     border: 1px solid rgba(221, 221, 221, 0.5);
   }
+
   &.black {
     background: #4d4d4d;
   }
+
   &.yellow {
     background: #fcdc00;
   }
+
   &.orange {
     background: #fe9200;
   }
+
   &.red {
     background: #f44e3b;
   }
+
   &.purple {
     background: #7b64ff;
   }
+
   &.magenta {
     background: #ab149e;
   }
+
   &.green {
     background: #a4dd00;
   }
+
   &.teal {
     background: #68ccca;
   }
+
   &.blue {
     background: #009ce0;
   }

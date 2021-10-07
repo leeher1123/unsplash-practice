@@ -160,3 +160,72 @@ export const IconChecked = () => (
     />
   </svg>
 );
+
+export const IconBars = () => (
+  <svg
+    width="24"
+    height="24"
+    className="_150at"
+    viewBox="0 0 32 32"
+    version="1.1"
+    aria-hidden="false"
+  >
+    <path d="M4 21.3h24V24H4v-2.7zM4 8v2.7h24V8H4zm0 9.3h24v-2.7H4v2.7z" />
+  </svg>
+);
+
+export const IconBag = () => (
+  <svg width="24" height="24" className="_1YtZO" viewBox="0 0 24 24">
+    <path
+      opacity=".5"
+      d="M2.804 15.477s.142 1.738.175 2.286c.044.735.328 1.556.802 2.126.67.808 1.457 1.093 2.51 1.095 1.236.002 10.231.002 11.468 0 1.052-.002 1.84-.287 2.51-1.095.473-.57.757-1.391.802-2.126.032-.548.174-2.286.174-2.286"
+      stroke="#111"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M8.496 5.33v-.372c0-1.22.988-2.208 2.208-2.208h2.582c1.219 0 2.208.989 2.208 2.208l.001.372M11.995 16.678v-1.294"
+      stroke="#111"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      clipRule="evenodd"
+      d="M2.75 8.39v3.466c1.918 1.265 4.216 2.151 6.738 2.502a2.584 2.584 0 012.502-1.908c1.188 0 2.2.807 2.483 1.918 2.532-.35 4.839-1.237 6.767-2.512V8.39a3.05 3.05 0 00-3.057-3.058H5.817A3.06 3.06 0 002.75 8.39z"
+      stroke="#111"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+);
+
+export const IconArrowDown = () => (
+  <svg
+    width="32"
+    height="32"
+    className="_1Czdz"
+    viewBox="0 0 32 32"
+    version="1.1"
+    aria-hidden="false"
+  >
+    <path d="M9.9 11.5l6.1 6.1 6.1-6.1 1.9 1.9-8 8-8-8 1.9-1.9z" />
+  </svg>
+);
+
+export const IconFilter = () => (
+  <svg
+    width="32"
+    height="32"
+    className="_3fj4s"
+    viewBox="0 0 32 32"
+    version="1.1"
+    aria-hidden="false"
+  >
+    <path
+      d="M0,24.89v3.55H10.67V24.89ZM0,3.56V7.11H17.78V3.56ZM17.78,32V28.44H32V24.89H17.78V21.33H14.22V32ZM7.11,10.67v3.55H0v3.56H7.11v3.55h3.56V10.67ZM32,17.78V14.22H14.22v3.56ZM21.33,10.67h3.56V7.11H32V3.56H24.89V0H21.33Z"
+    />
+  </svg>
+);

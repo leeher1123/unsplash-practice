@@ -1,10 +1,11 @@
 import React, { useRef, useState } from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { useHistory } from 'react-router-dom';
 import cn from 'classnames';
 
 import { IconSearch } from '../../../../icons';
 import { DefaultButton } from '../Button/Button.Styled';
+import { media } from '../../../../lib/styled';
 
 const SearchBox = ({ shape }) => {
   const [value, setValue] = useState('');
@@ -41,6 +42,10 @@ const SearchBox = ({ shape }) => {
 
 const Container = styled.div`
   flex: 3;
+  ${media.md(css`
+    width: 100%;
+    margin-right: 10px;
+  `)};
 `;
 
 const Form = styled.form`
@@ -55,12 +60,13 @@ const Form = styled.form`
     border-radius: 19px;
     border: 1px solid transparent;
     transition: .2s;
-    
+
     &:hover {
       border-color: #ccc;
     }
-    
+
   }
+
   .isFocus.round & {
     background-color: #fff;
     border-color: #ccc;
@@ -70,6 +76,9 @@ const Form = styled.form`
     background: #fff;
     height: 54px;
     border-radius: 6px;
+    ${media.sm(css`
+      display: none;
+    `)}
   }
 `;
 
@@ -77,10 +86,12 @@ const Button = styled(DefaultButton)`
   svg {
     display: flex;
     align-items: center;
+
     .round & {
       width: 20px;
       height: 20px;
     }
+
     .square & {
       width: 24px;
       height: 24px;

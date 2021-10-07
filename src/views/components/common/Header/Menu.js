@@ -1,30 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
-import { IconSpot } from '../../../../icons';
-import { DefaultButton } from '../Button/Button.Styled';
+import { media } from '../../../../lib/styled';
 
 const Menu = () => (
   <Container>
     <Text>
-      <a href="/">
-        <div>Brand</div>
-      </a>
-      <a href="/">
-        <div>Explore</div>
-      </a>
-      <a href="/">
-        <div>Blog</div>
-      </a>
-      <Button>
-        <IconSpot />
-      </Button>
+      <Item>Brands</Item>
+      <Item className="long">🏆 Unsplash Awards</Item>
+      <Item className="small">🏆 Awards</Item>
     </Text>
   </Container>
 );
 
 const Container = styled.div`
   height: 62px;
+  ${media.sm(css`
+    display: none;
+  `)}
 `;
 
 const Text = styled.div`
@@ -32,31 +25,34 @@ const Text = styled.div`
   align-items: center;
   height: 100%;
   padding: 0 36px;
-  a {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    padding: 20px 12px;
-    font-size: 14px;
-    font-weight: 500;
-    transition: .2s;
-    &:hover {
-      color: #000;
-    }
-  }
 `;
 
-const Button = styled(DefaultButton)`
-  padding: 0 12px;
-  svg {
-    color: #767676;
-    fill: currentColor;
-    transition: .2s;
-    &:hover {
-      cursor: pointer;
-      color: #000;
-    }
+const Item = styled.div`
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 20px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: .2s;
+  color: #767676;
+  cursor: pointer;
+
+  &:hover {
+    color: #000;
+  }
+
+  &.long {
+    ${media.md(css`
+      display: none;
+    `)};
+  }
+
+  &.small {
+    display: none;
+    ${media.md(css`
+      display: flex;
+    `)};
   }
 `;
-
 export default Menu;

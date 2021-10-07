@@ -12,10 +12,7 @@ const Main = () => (
 );
 
 const Container = styled.div`
-  position: absolute;
-  top: 100px;
-  right: 0;
-  left: 0;
+  padding-top: 118px;
 `;
 
 export default Main;
