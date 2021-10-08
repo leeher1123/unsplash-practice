@@ -1,14 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { useDispatch } from 'react-redux';
+
 import { IconClose } from '../../../icons';
 import { DefaultButton } from '../common/Button/Button.Styled';
+import { Action } from '../../../redux/search/slice';
 
 const SearchPopup = () => {
+  const dispatch = useDispatch();
   const colors = ['white', 'black', 'yellow', 'orange', 'red', 'purple', 'magenta', 'green', 'teal', 'blue'];
+
+  const onClose = () => {
+    dispatch(Action.Creators.closePopup());
+  };
   return (
     <Container>
-      <CloseBtn><IconClose /></CloseBtn>
+      <CloseBtn onClick={onClose}><IconClose /></CloseBtn>
       <Contents>
         <Content>
           <Title>Sort by</Title>

@@ -17,6 +17,7 @@ export const Action = {
     SEARCH_PHOTOS: 'SEARCH_PHOTOS',
     SET_SEARCH_RESULTS: 'SET_SEARCH_RESULTS',
     OPEN_POPUP: 'OPEN_POPUP',
+    CLOSE_POPUP: 'CLOSE_POPUP',
   },
 
   Creators: {
@@ -30,6 +31,9 @@ export const Action = {
     }),
     openPopup: () => ({
       type: Action.Types.OPEN_POPUP,
+    }),
+    closePopup: () => ({
+      type: Action.Types.CLOSE_POPUP,
     }),
   },
 };
@@ -49,6 +53,12 @@ const reducer = (state = initialState, action) => {
     return {
       ...state,
       openPopup: true,
+    };
+  }
+  case Action.Types.CLOSE_POPUP: {
+    return {
+      ...state,
+      openPopup: false,
     };
   }
   }
