@@ -9,12 +9,14 @@ const initialState = {
     results: [],
   },
   related_searches: [],
+  openPopup: false,
 };
 
 export const Action = {
   Types: {
     SEARCH_PHOTOS: 'SEARCH_PHOTOS',
     SET_SEARCH_RESULTS: 'SET_SEARCH_RESULTS',
+    OPEN_POPUP: 'OPEN_POPUP',
   },
 
   Creators: {
@@ -25,6 +27,9 @@ export const Action = {
     setSearchResult: (payload) => ({
       type: Action.Types.SET_SEARCH_RESULTS,
       payload,
+    }),
+    openPopup: () => ({
+      type: Action.Types.OPEN_POPUP,
     }),
   },
 };
@@ -38,6 +43,12 @@ const reducer = (state = initialState, action) => {
     return {
       ...state,
       ...action.payload,
+    };
+  }
+  case Action.Types.OPEN_POPUP: {
+    return {
+      ...state,
+      openPopup: true,
     };
   }
   }
