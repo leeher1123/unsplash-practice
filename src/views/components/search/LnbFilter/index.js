@@ -1,24 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
 import { VscTriangleDown } from 'react-icons/vsc';
 
 import cn from 'classnames';
 
+import { useDispatch, useSelector } from 'react-redux';
+
 import FilterItem from './FilterItem';
 import DropdownItem from '../Dropdown/DropdownItem';
 import FilterLink from './FilterLink';
 import { media } from '../../../../lib/styled';
 import { IconFilter } from '../../../../icons';
+import { Action } from '../../../../redux/search/slice';
 
 const LnbFilter = () => {
   const [currentOrientation, setCurrentOrientation] = useState('Any orientation');
   const [currentColor, setCurrentColor] = useState('Any color');
   const [currentRelevance, setCurrentRelevance] = useState('Relevance');
   const colors = ['white', 'black', 'yellow', 'orange', 'red', 'purple', 'magenta', 'green', 'teal', 'blue'];
+  const dispatch = useDispatch();
+  const onClick = () => {
+    dispatch(Action.Creators.openPopup());
+  };
   return (
     <Container>
-      <FilterIcon>
+      <FilterIcon onClick={onClick}>
         <IconFilter />
       </FilterIcon>
       <FilterItem dropdownItems={[

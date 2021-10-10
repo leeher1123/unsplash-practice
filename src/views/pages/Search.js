@@ -2,10 +2,12 @@ import React from 'react';
 import styled from 'styled-components';
 
 import SearchContainer from '../containers/SearchContainer';
+import SearchPopupContainer from '../containers/SearchPopupContainer';
 
 const Search = () => (
   <Container>
     <SearchContainer />
+    <SearchPopupContainer />
   </Container>
 );
 
