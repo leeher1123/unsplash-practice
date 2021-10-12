@@ -14,19 +14,49 @@ const initialState = {
 
 export const Action = {
   Types: {
-    SEARCH_PHOTOS: 'SEARCH_PHOTOS',
+    SEARCH: 'SEARCH',
     SET_SEARCH_RESULTS: 'SET_SEARCH_RESULTS',
+    SEARCH_PHOTOS: 'SEARCH_PHOTOS',
+    SET_SEARCH_PHOTOS: 'SET_SEARCH_PHOTOS',
+    SEARCH_COLLECTIONS: 'SEARCH_COLLECTIONS',
+    SET_SEARCH_COLLECTIONS: 'SET_SEARCH_COLLECTIONS',
+    SEARCH_USERS: 'SEARCH_USERS',
+    SET_SEARCH_USERS: 'SET_SEARCH_USERS',
     OPEN_POPUP: 'OPEN_POPUP',
     CLOSE_POPUP: 'CLOSE_POPUP',
   },
 
   Creators: {
-    searchPhotos: (payload) => ({
-      type: Action.Types.SEARCH_PHOTOS,
+    search: (payload) => ({
+      type: Action.Types.SEARCH,
       payload,
     }),
     setSearchResult: (payload) => ({
       type: Action.Types.SET_SEARCH_RESULTS,
+      payload,
+    }),
+    searchPhotos: (payload) => ({
+      type: Action.Types.SEARCH_PHOTOS,
+      payload,
+    }),
+    setSearchPhotos: (payload) => ({
+      type: Action.Types.SET_SEARCH_PHOTOS,
+      payload,
+    }),
+    searchCollections: (payload) => ({
+      type: Action.Types.SEARCH_COLLECTIONS,
+      payload,
+    }),
+    setSearchCollections: (payload) => ({
+      type: Action.Types.SET_SEARCH_COLLECTIONS,
+      payload,
+    }),
+    searchUsers: (payload) => ({
+      type: Action.Types.SEARCH_USERS,
+      payload,
+    }),
+    setSearchUsers: (payload) => ({
+      type: Action.Types.SET_SEARCH_USERS,
       payload,
     }),
     openPopup: () => ({
@@ -47,6 +77,24 @@ const reducer = (state = initialState, action) => {
     return {
       ...state,
       ...action.payload,
+    };
+  }
+  case Action.Types.SET_SEARCH_PHOTOS: {
+    return {
+      ...state,
+      photos: action.payload,
+    };
+  }
+  case Action.Types.SET_SEARCH_COLLECTIONS: {
+    return {
+      ...state,
+      collections: action.payload,
+    };
+  }
+  case Action.Types.SET_SEARCH_USERS: {
+    return {
+      ...state,
+      users: action.payload,
     };
   }
   case Action.Types.OPEN_POPUP: {
