@@ -5,22 +5,22 @@ import { IconUserPlus } from '../../../../icons';
 import { DefaultButton } from '../Button/Button.Styled';
 import UserImgItem from './UserImgItem';
 
-const UserItem = ({ user }) => (
+const UserItem = ({ item }) => (
   <Container>
     <User>
-      <img src={user.profile_image?.medium} alt="" />
+      <img src={item.profile_image?.medium} alt="" />
       <Contents>
-        <h2>{user.name}</h2>
+        <h2>{item.name}</h2>
         <p>
           @
-          {user.username}
+          {item.username}
         </p>
       </Contents>
       <Btn>
         <PlusButton><IconUserPlus /></PlusButton>
       </Btn>
     </User>
-    <UserImgItem user={user} />
+    <UserImgItem user={item} />
     <Button>View profile</Button>
   </Container>
 );

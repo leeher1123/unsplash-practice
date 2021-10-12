@@ -11,7 +11,7 @@ export const useRecomposePhotos = (data) => {
 
   const initData = isLg ? [[], [], []] : isMd ? [[], []] : [[]];
   const initGroupHeight = isLg ? [0, 0, 0] : isMd ? [0, 0] : [0];
-  const [newData, setNewData] = useState(initData);
+  const [newData, setNewData] = useState([]);
 
   useEffect(() => {
     const result = initData;
@@ -27,8 +27,8 @@ export const useRecomposePhotos = (data) => {
 
       result[minHeightGroupIndex].push(data[i]);
       photosGroupHeight[minHeightGroupIndex] += ratioHeight;
-      setNewData(result);
     }
+    setNewData(result);
   }, [data, isLg, isMd, isSm]);
 
   return newData;

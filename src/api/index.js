@@ -17,8 +17,23 @@ const API = {
     url: `/photos/${id}`,
     method: 'get',
   }),
-  searchPhotos: (data) => axiosInstance({
+  search: (data) => axiosInstance({
     url: '/search',
+    method: 'get',
+    params: data,
+  }),
+  searchPhotos: (data) => axiosInstance({
+    url: '/search/photos',
+    method: 'get',
+    params: data,
+  }),
+  searchCollections: (data) => axiosInstance({
+    url: '/search/collections',
+    method: 'get',
+    params: data,
+  }),
+  searchUsers: (data) => axiosInstance({
+    url: '/search/users',
     method: 'get',
     params: data,
   }),
