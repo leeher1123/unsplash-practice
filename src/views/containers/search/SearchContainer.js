@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import qs from 'qs';
 
@@ -24,7 +24,10 @@ import SearchUsersContainer from './SearchUsersContainer';
 const SearchContainer = () => {
   const dispatch = useDispatch();
   const { query } = useParams();
+  const location = useLocation();
+  const { orientation, color, order_by } = qs.parse(location.search, { ignoreQueryPrefix: true });
   const perPage = 5;
+  const [page, setPage] = useState(1);
 
   const {
     photos, collections, users, related_searches,
@@ -34,19 +37,29 @@ const SearchContainer = () => {
     dispatch(Action.Creators.search({
       query,
       perPage,
+      orientation,
+      color,
+      order_by,
+      page: 1, // page 가 1일 떄는 여기서 통신
     }));
+  };
+
+  const initializeView = () => {
+    setPage(1);
+    window.scrollTo(0, 0);
   };
 
   useEffect(() => {
     searchPhotos();
-  }, [query]);
+    initializeView();
+  }, [query, orientation, color, order_by]);
 
   return (
     <Container>
-      <SearchLnb data={{ photos, collections, users }} />
+      <SearchLnb data={{ photos, collections, users }} onClick={initializeView} />
 
       <ContentContainer>
-        <RelatedSearchesMenu menu={related_searches} />
+        <RelatedSearchesMenu menu={related_searches} initializeView={initializeView} />
 
         <Switch>
           <Route path="/search/photos/:query">
@@ -54,6 +67,8 @@ const SearchContainer = () => {
               data={photos.results}
               query={query}
               perPage={perPage}
+              page={page}
+              setPage={setPage}
             />
           </Route>
           <Route path="/search/collections/:query">
@@ -61,6 +76,8 @@ const SearchContainer = () => {
               data={collections.results}
               query={query}
               perPage={perPage}
+              page={page}
+              setPage={setPage}
             />
           </Route>
           <Route path="/search/users/:query">
@@ -68,6 +85,8 @@ const SearchContainer = () => {
               data={users.results}
               query={query}
               perPage={perPage}
+              page={page}
+              setPage={setPage}
             />
           </Route>
         </Switch>

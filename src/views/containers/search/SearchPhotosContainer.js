@@ -13,11 +13,12 @@ import PhotoList from '../../components/common/List/PhotoList';
 import Spinner from '../../components/common/Loader/Spinner';
 import { Action } from '../../../redux/search/slice';
 
-const SearchPhotosContainer = ({ data, query, perPage }) => {
+const SearchPhotosContainer = ({
+  data, query, perPage, page, setPage,
+}) => {
   const dispatch = useDispatch();
   const location = useLocation();
   const { orientation, color, order_by } = qs.parse(location.search, { ignoreQueryPrefix: true });
-  const [page, setPage] = useState(1);
   const next = () => {
     setPage((p) => p + 1);
   };
@@ -33,8 +34,10 @@ const SearchPhotosContainer = ({ data, query, perPage }) => {
   };
 
   useEffect(() => {
-    searchPhotos();
-  }, [query, page, orientation, color, order_by]);
+    if (page > 1) { // page 가 1일 때는 search 에서 통신할 것이기 때문
+      searchPhotos();
+    }
+  }, [page]); // 오로지 무한스크롤 용도
   return (
     <Container>
       <InfiniteScroll

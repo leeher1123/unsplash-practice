@@ -6,7 +6,7 @@ import cn from 'classnames';
 import { getSearchMenus } from '../../../../../lib/search';
 import { media } from '../../../../../lib/styled';
 
-const Nav = ({ totalNum }) => {
+const Nav = ({ totalNum, onClick }) => {
   const { query, category } = useParams();
 
   const searchMenus = getSearchMenus(query, category, { totalNum });
@@ -20,10 +20,11 @@ const Nav = ({ totalNum }) => {
             key={name}
             to={to}
             className={cn({ isActive })}
+            onClick={onClick}
           >
             {icon}
             {name}
-            {' '}
+            &nbsp;
             <Num>
               {
                 num >= 1000 ? parseFloat((num / 1000).toFixed(1)) : num

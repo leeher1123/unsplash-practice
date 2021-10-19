@@ -5,7 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 
 import ScrollMenu from '../common/ScrollMenu';
 
-const RelatedSearchesMenu = ({ menu }) => {
+const RelatedSearchesMenu = ({ menu, initializeView }) => {
   const { query } = useParams();
 
   return (
@@ -13,7 +13,7 @@ const RelatedSearchesMenu = ({ menu }) => {
       <h1>{query}</h1>
       <ScrollMenu menu={menu}>
         {
-          (item) => <MenuItem to={`/search/photos/${item.title}`}>{item.title}</MenuItem>
+          (item) => <MenuItem to={`/search/photos/${item.title}`} onClick={initializeView}>{item.title}</MenuItem>
         }
       </ScrollMenu>
     </Container>
