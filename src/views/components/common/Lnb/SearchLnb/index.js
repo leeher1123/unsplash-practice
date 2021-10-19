@@ -4,9 +4,9 @@ import styled from 'styled-components';
 import Nav from './Nav';
 import LnbFilterContainer from '../../../../containers/LnbFilterContainer';
 
-const SearchLnb = ({ data }) => (
+const SearchLnb = ({ data, onClick }) => (
   <Container>
-    <Nav totalNum={data} />
+    <Nav totalNum={data} onClick={onClick} />
     <LnbFilterContainer />
   </Container>
 );
