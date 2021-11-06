@@ -50,9 +50,6 @@ const SearchPopup = () => {
             Square
           </p>
         </Content>
-        <Content>
-          <Button>Apply</Button>
-        </Content>
       </Contents>
     </Container>
   );
